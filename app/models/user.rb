@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+         has_one_attached :image
+
          validates :prefecture_id, numericality: { other_than: 1 , message: "can't be blank"}
 
          extend ActiveHash::Associations::ActiveRecordExtensions
