@@ -98,13 +98,14 @@
                                                 <%= f.collection_select(:group_id, Group.all, :id, :name, {}, {class:"select-box", id:"group"}) %>
                                                 </div>
                                                 </div>
-                                            <div class="col-md-12">
+                                            <div class="col-md-12 mt-3 ">
                                                 <%= f.submit "Create Account" ,class:"register-red-btn" %>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="login.html">Have an account? Go to login</a></div>
+                                    
+                                        <div class="small"><%= link_to 'Have an account? Go to login', new_user_session_path %></div>
                                     </div>
                                 </div>
                             </div>
