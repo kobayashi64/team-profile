@@ -60,15 +60,8 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-<<<<<<< Updated upstream
-    bcrypt (3.1.16)
-=======
-<<<<<<< Updated upstream
-=======
     ast (2.4.2)
     bcrypt (3.1.16)
->>>>>>> Stashed changes
->>>>>>> Stashed changes
     bindex (0.8.1)
     bootsnap (1.10.3)
       msgpack (~> 1.2)
@@ -122,17 +115,10 @@ GEM
     nokogiri (1.13.3)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-<<<<<<< Updated upstream
-    orm_adapter (0.5.0)
-=======
-<<<<<<< Updated upstream
-=======
     orm_adapter (0.5.0)
     parallel (1.21.0)
     parser (3.1.0.0)
       ast (~> 2.4.1)
->>>>>>> Stashed changes
->>>>>>> Stashed changes
     public_suffix (4.0.6)
     puma (3.12.6)
     racc (1.6.0)
@@ -225,7 +211,6 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
-
     unicode-display_width (2.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
