@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ body, html { font-size: 30px; }
+@media screen and (min-width: 0px) and (max-width: 575px) { body, html { font-size: 10px; } }
+@media screen and (min-width: 576px) and (max-width: 768px) { body, html { font-size: 12px; } }
+@media screen and (min-width: 769px) and (max-width: 992px) { body, html { font-size: 13px; } }
+@media screen and (min-width: 993px) and (max-width: 1200px) { body, html { font-size: 14px; } }
+@media screen and (min-width: 1201px) { body, html { font-size: 15px; } }
