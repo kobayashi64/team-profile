@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
                                       keys: [:image, :name, :introduction, :birthday, :assignment_date, :group_id,
                                              :prefecture_id])
 
-                                             
+    devise_parameter_sanitizer.permit(:account_update,
+                                      keys: [:image, :name, :introduction, :birthday, :assignment_date, :group_id,
+                                             :prefecture_id])
   end
 end
