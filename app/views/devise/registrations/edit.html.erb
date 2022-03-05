@@ -1,0 +1,125 @@
+<%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+    <div class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">プロフィール情報編集画面</h3></div>
+                                    <div class="card-body">
+                                        <form>
+                                        <div class="row mb-3">
+                                                <div class="col-md-12">
+                                                <label for="inputName">顔写真</label>
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <%= f.file_field :image, id:"item-image" %>
+                                                    </div>
+                                                </div>
+                                          
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-12">
+                                                <label for="inputName">フルネーム</label>
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <%= f.text_area :name, class:"input-default", id:"name", placeholder:"例) 田中 太郎", autofocus: true %>
+                                                    </div>
+                                                </div>
+                                          
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-12">
+                                                <label for="inputName">メールアドレス</label>
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <%= f.text_area :email, class:"input-default", id:"email", placeholder:"会社PCのメールアドレスを入力してください" %>
+                                                    </div>
+                                                </div>
+                                          
+                                            </div>
+
+                                          <div class="row mb-3">
+                                                <div class="col-md-12">
+                                                  <label for="inputName">自己紹介</label>
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <%= f.text_area :introduction, class:"input-introduction", id:"email", placeholder:"" %>
+                                                    </div>
+                                                  </div>
+                                               </div>  
+                                            <div class="row mb-3">
+                                                <div class="col-md-12">
+                                                <label for="inputName">生年月日</label>
+                                                    <div class="input-birth-wrap mb-3 mb-md-0 d-flex">
+                                                        <%= raw sprintf(
+                                                            f.date_select(
+                                                            :birthday,
+                                                            class:'select-birth',
+                                                            id:"birth-date",
+                                                            use_month_numbers: true,
+                                                            prompt:'--',
+                                                            start_year: 1930,
+                                                            end_year: (Time.now.year - 5),
+                                                            date_separator: '%s'),
+                                                            "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+                                                    </div>
+                                                </div>
+                                                 <div class="col-md-12">
+                                                <label for="inputName">配属日</label>
+                                                    <div class="input-birth-wrap mb-3 mb-md-0 d-flex">
+                                                        <%= raw sprintf(
+                                                            f.date_select(
+                                                            :assignment_date,
+                                                            class:'select-birth',
+                                                            id:"birth-date",
+                                                            use_month_numbers: true,
+                                                            prompt:'--',
+                                                            start_year: 1930,
+                                                            end_year: (Time.now.year - 5),
+                                                            date_separator: '%s'),
+                                                            "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+                                                    </div>
+                                                </div>
+                                               <div class="row mb-3">
+                                                <div class="col-md-2">
+                                                <label for="inputName">出身地</label>
+                                                    <div class="input-birth-wrap mb-3 mb-md-0 d-flex">
+                                                <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+                                                </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                <label for="inputName">所属グループ</label>
+                                                    <div class="input-birth-wrap mb-3 mb-md-0 d-flex">
+                                                <%= f.collection_select(:group_id, Group.all, :id, :name, {}, {class:"select-box", id:"group"}) %>
+                                                </div>
+                                                </div>
+                                            <div class="col-md-12 mt-3 ">
+                                                <%= f.submit "Create Account" ,class:"register-red-btn" %>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="card-footer text-center py-3">
+                                    
+                                        <div class="small"><%= link_to 'Have an account? Go to login', new_user_session_path %></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div id="layoutAuthentication_footer">
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+<% end %>
