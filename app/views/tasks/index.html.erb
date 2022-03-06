@@ -1,3 +1,27 @@
+ <head>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/css/theme.default.min.css">
+<style>
+#fav-table th {
+    background-color:pink;
+}
+
+.sorter-false {
+    background-image: none;
+}
+</style>
+<script>
+$(document).ready(function() {
+    $('#fav-table').tablesorter({
+            headers: {
+               0: { sorter: false }
+            }
+    });
+});
+</script>
+</head>
 
  
  <div class="sb-nav-fixed">
@@ -123,6 +147,22 @@
       <a href="#" class="btn btn-outline-danger">忘れた</a>
    </div>
 </div>
+
+               <div class="card-body">
+    <caption>メンバ一覧</caption>
+    <table id="fav-table" class="table table-bordered">
+  <thead>
+      <tr><th>名前</th><th>年齢</th></tr>
+  </thead>
+  <tbody>
+  <% @user.each do |user| %>
+      <tr><td><%= user.name %></td><td><%= user.birthday %></td></tr>
+      <% end %>
+  </tbody>
+</table>
+</div>
+
+
 
 </div>
 </div>
