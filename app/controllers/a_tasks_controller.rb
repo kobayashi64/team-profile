@@ -1,0 +1,2 @@
+class ATasksController < ApplicationController
+end

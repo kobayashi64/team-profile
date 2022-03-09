@@ -1,0 +1,2 @@
+class CTask < ApplicationRecord
+end

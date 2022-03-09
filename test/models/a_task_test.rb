@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TaskTest < ActiveSupport::TestCase
+class ATaskTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

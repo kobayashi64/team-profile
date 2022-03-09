@@ -1,0 +1,3 @@
+class ATask < ApplicationRecord
+  
+end

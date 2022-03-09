@@ -1,0 +1,2 @@
+class BTask < ApplicationRecord
+end
