@@ -141,8 +141,8 @@ $(document).ready(function() {
                         <p>  </p>
 
                    
-<%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-
+<%= form_with model: @c_task, url: c_tasks_path, local: true do |f| %>
+    
     <div class="container">
      <div class="row">
       <div class="col-12 mb-3 ">
@@ -278,6 +278,9 @@ $(document).ready(function() {
 
   
   </div>
+</div>
+<div class="col-md-12 mt-3 ">
+<%= f.submit "Create Account" ,class:"register-red-btn" %>
 </div>
 
 <% end %>

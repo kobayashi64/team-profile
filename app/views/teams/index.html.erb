@@ -39,16 +39,31 @@
 
 
                             <div class="sb-sidenav-menu-heading">教育目標</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth"" aria-expanded="false" aria-controls="pagesCollapseAuth"">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 認定制度
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="pagesCollapseAuth"" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                     <a class="nav-link" href="#">A認定</a>
-                                     <a class="nav-link" href="#">B認定</a> 
+
+                                     <% if @b_task.present?  == current_user %>
+                                     <%= link_to("A認定", a_task_path(current_user.id), {class: "nav-link"}) %>
+                                     <% else%> 
+                                     <%= link_to("A認定", a_tasks_path, {class: "nav-link"}) %> 
+                                     <% end %>
+
+                                     <% if @b_task.present?  == current_user %>
+                                     <%= link_to("B認定", b_task_path(current_user.id), {class: "nav-link"}) %>
+                                     <% else%>  
+                                     <%= link_to("B認定", b_tasks_path, {class: "nav-link"}) %> 
+                                     <% end %>
+
+                                     <% if @c_task.present? == current_user %>
+                                     <%= link_to("C認定", c_task_path(current_user.id), {class: "nav-link"}) %> 
+                                     <% else%>  
                                      <%= link_to("C認定", c_tasks_path, {class: "nav-link"}) %> 
+                                     <% end %>
                                 </nav>
                             </div>
 
@@ -109,6 +124,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                  <%= link_to('詳細', team_path(user.id), {class: "btn btn-sm btn-outline-secondary"}) %>
+                                 
                                 </div>
                                 </div>
                             </div>
