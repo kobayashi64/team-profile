@@ -137,8 +137,8 @@ $(document).ready(function() {
                         </ol>
 
 
-                        <div class="p-3 mb-2 bg-dark text-white">C認定教育項目一覧  ＊</div>
-                        <p>  </p>
+                        <div class="p-3 mb-2 bg-dark text-white">C認定教育項目一覧  ＊<%= link_to(@c_task.user.name, edit_c_task_path(@c_task.id), {class: "btn btn-sm btn-outline-secondary"}) %></div>
+                        
 
     
     <div class="container">
@@ -183,7 +183,7 @@ $(document).ready(function() {
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(1~10の評価で入力)</label>
-    <%= f.text_area :get_log, class:"input-default", id:"self_assessment_2", placeholder:"半角数字で入力してください",maxlength:"2" %>
+    <div class="input-default", id="self_assessment_2" ><%= @c_task.get_log %></div>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -209,7 +209,7 @@ $(document).ready(function() {
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(1~10の評価で入力)</label>
-    <%= f.text_area :surveillance_monitor, class:"input-default", id:"self_assessment_3", placeholder:"半角数字で入力してください",maxlength:"2" %>
+    <div class="input-default", id="self_assessment_3" ><%=  @c_task.surveillance_monitor %></div>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -235,7 +235,7 @@ $(document).ready(function() {
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(1~10の評価で入力)</label>
-    <%= f.text_area :check_the_log, class:"input-default", id:"self_assessment_4", placeholder:"半角数字で入力してください",maxlength:"2" %>
+    <div class="input-default", id="self_assessment_4" ><%=  @c_task.check_the_log %></div>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -261,7 +261,7 @@ $(document).ready(function() {
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(1~10の評価で入力)</label>
-    <%= f.text_area :card_lending, class:"input-default", id:"self_assessment_5", placeholder:"半角数字で入力してください",maxlength:"2" %>
+      <div class="input-default", id="self_assessment_5" ><%=  @c_task.card_lending %></div>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -302,7 +302,7 @@ $(document).ready(function() {
   </thead>
   <tbody>
   
-      <tr><td><%= current_user.name %></td><td><%= @c_task.job_confirmation %></td></tr>
+      <tr><td><%= @c_task.user.name %></td><td><%= @c_task.job_confirmation %></td></tr>
       
   </tbody>
 </table>

@@ -122,29 +122,6 @@
        <div class="card border-light mb-3">
           
 
-             <% @c_tasks.each do |user| %>
-                       <div class="col-lg-2 col-4 mb-3 ">
-                        <div class="card h-100 mb-6 shadow-sm">
-                            <div class="bd-placeholder-img card-img-top ">
-                            <%= image_tag user.user.image, class: "img-fluid"%></div>
-                            <div class="card-body">
-                                <h5 class="card-text text-truncate"><%= user.user.name %></h5>
-                                <p class="card-text text-truncate">
-                                <%= user.user.group.name %>
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                 <%# <%= link_to('詳細', c_task_path(user.c_task.id), {class: "btn btn-sm btn-outline-secondary"}) %> %>
-                                 
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-                    <% end %>
-
-
-
             <div class="card-header">プロフィール</div>
             <div class="card-body">
             <h6 class="breadcrumb-item active">氏名</h6>
