@@ -94,14 +94,38 @@
                                                 <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
                                                 </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-2">
                                                 <label for="inputName">所属グループ</label>
                                                     <div class="input-birth-wrap mb-3 mb-md-0 d-flex">
                                                 <%= f.collection_select(:group_id, Group.all, :id, :name, {}, {class:"select-box", id:"group"}) %>
                                                 </div>
                                                 </div>
+
+
+                                                <div class="row mb-3 mt-3">
+                                                <div class="col-md-2">
+                                                <label for="inputName">A認定</label>
+                                                    <div class="input-birth-wrap mb-3 mb-md-0 d-flex">
+                                                <%= f.collection_select(:a_certification_id, ACertification.all, :id, :name, {}, {class:"select-box", id:"a_certification"}) %>
+                                                </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                <label for="inputName">B認定</label>
+                                                    <div class="input-birth-wrap mb-3 mb-md-0 d-flex">
+                                                <%= f.collection_select(:b_certification_id, BCertification.all, :id, :name, {}, {class:"select-box", id:"b_certification"}) %>
+                                                </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                <label for="inputName">C認定</label>
+                                                    <div class="input-birth-wrap mb-3 mb-md-0 d-flex">
+                                                <%= f.collection_select(:c_certification_id, CCertification.all, :id, :name, {}, {class:"select-box", id:"c_certification"}) %>
+                                                </div>
+                                                </div>
+                                                 </div>
+
                                             <div class="col-md-12 mt-3 ">
-                                                <%= f.submit "Create Account" ,class:"register-red-btn" %>
+                                                <%= f.submit "Edit Account" ,class:"register-red-btn" %>
                                             </div>
                                         </form>
                                     </div>

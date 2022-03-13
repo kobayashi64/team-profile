@@ -135,57 +135,21 @@ $(document).ready(function() {
                          <li><%= link_to("Click here to log in", new_user_session_path, {class: "breadcrumb-item active"}) %></li>
                          <% end %>
                         </ol>
-
-
-
-                       
-                        <div class="p-3 mb-2 bg-dark text-white ">C認定教育項目一覧  ＊
-                         <% if user_signed_in? && current_user.id == @c_task.user_id %>
-                         
-                        <%= link_to('編集', edit_c_task_path(@c_task.id), {class: "btn btn-sm btn-outline-secondary text-white "}) %>
-                        
-                        <% end %>
-                       
-                        </div>
-                       
                         
 
-    
+                        <div class="p-3 mb-2 bg-dark text-white">C認定教育項目一覧  ＊</div>
+                        <p>  </p>
+
+                   
+<%= form_with model: @c_task, local: true do |f| %>
+
     <div class="container">
      <div class="row">
       <div class="col-12 mb-3 ">
-
-
- <tbody>
-  <table class="mytable mb-3">
-
- 
-   <th>定時起動JOBの確認</th>
-   <th>監視ログ定点確認</th>
-   <th>監視画面の正常性確認</th>
-   <th>業務ログ取得</th>
-   <th>セキュリティカードの貸出</th>
-  </tr>
-  <tr>
- 
-    <td><%= @c_task.job_confirmation %></td>
-    <td><%= @c_task.check_the_log %></td>
-    <td><%= @c_task.surveillance_monitor %></td>
-    <td><%= @c_task.get_log %></td>
-    <td><%= @c_task.card_lending %></td>
-  </tr>
-</table>
-</tbody>
-
-
-      
-      
 <div class="card" >
 <div class="col-12 mb-3 d-flex">
   <div class="card-body">
    <div class="aaa">
-
-   
     <h5 class="card-title">定時起動ジョブの確認</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
@@ -194,7 +158,7 @@ $(document).ready(function() {
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(1~10の評価で入力)</label>
-    <div class="input-default", id="self_assessment" ><%= @c_task.job_confirmation %></div>
+    <%= f.text_area :job_confirmation, class:"input-default", id:"self_assessment", placeholder:"半角数字で入力してください",maxlength:"3" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -221,7 +185,7 @@ $(document).ready(function() {
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(1~10の評価で入力)</label>
-    <div class="input-default", id="self_assessment_2" ><%= @c_task.get_log %></div>
+    <%= f.text_area :get_log, class:"input-default", id:"self_assessment_2", placeholder:"半角数字で入力してください",maxlength:"3" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -247,7 +211,7 @@ $(document).ready(function() {
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(1~10の評価で入力)</label>
-    <div class="input-default", id="self_assessment_3" ><%=  @c_task.surveillance_monitor %></div>
+    <%= f.text_area :surveillance_monitor, class:"input-default", id:"self_assessment_3", placeholder:"半角数字で入力してください",maxlength:"2" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -273,7 +237,7 @@ $(document).ready(function() {
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(1~10の評価で入力)</label>
-    <div class="input-default", id="self_assessment_4" ><%=  @c_task.check_the_log %></div>
+    <%= f.text_area :check_the_log, class:"input-default", id:"self_assessment_4", placeholder:"半角数字で入力してください",maxlength:"2" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -299,7 +263,7 @@ $(document).ready(function() {
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(1~10の評価で入力)</label>
-      <div class="input-default", id="self_assessment_5" ><%=  @c_task.card_lending %></div>
+    <%= f.text_area :card_lending, class:"input-default", id:"self_assessment_5", placeholder:"半角数字で入力してください",maxlength:"2" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -315,11 +279,8 @@ $(document).ready(function() {
   
   </div>
 </div>
-<div class="col-md-12 mt-3 ">
-
-</div>
-
-
+<%= f.submit "Create Account" ,class:"register-red-btn" %>
+<% end %>
 
 
 
@@ -327,6 +288,24 @@ $(document).ready(function() {
 </div>
 </div>
 
+
+
+
+
+
+               <div class="card-body">
+    <caption>メンバ一覧</caption>
+    <table id="fav-table" class="table table-bordered">
+  <thead>
+      <tr><th>名前</th><th>年齢</th></tr>
+  </thead>
+  <tbody>
+  <% @user.each do |user| %>
+      <tr><td><%= user.name %></td><td><%= user.birthday %></td></tr>
+      <% end %>
+  </tbody>
+</table>
+</div>
 
 
 

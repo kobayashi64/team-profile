@@ -14,4 +14,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
   belongs_to :group
+  belongs_to :c_certification
+  belongs_to :b_certification
+  belongs_to :a_certification
 end

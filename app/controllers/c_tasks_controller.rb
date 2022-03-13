@@ -15,6 +15,11 @@ class CTasksController < ApplicationController
     @user = User.all
   end
 
+  def new
+    @user = User.all
+    @c_task = CTask.new
+  end
+
   def update
     @c_task = CTask.find(params[:id])
     if @c_task.update(c_task_params)
