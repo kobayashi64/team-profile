@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/css/theme.default.min.css">
 <style>
 #fav-table th {
-    background-color:pink;
+    background-color:#EEEEEE;
 }
 
 .sorter-false {
@@ -138,7 +138,7 @@ $(document).ready(function() {
                         </ol>
 
 
-                        <div class="p-3 mb-2 bg-dark text-white">C認定教育項目一覧  ＊</div>
+                        <div class="p-3 mb-2 bg-dark text-white">C認定一覧 </div>
                         
 
        <div class="container">
@@ -166,11 +166,11 @@ $(document).ready(function() {
             <h6 class="breadcrumb-item active">氏名</h6>
               <p class="card-text"><%= c_task.user.name %></p>
               <h6 class="breadcrumb-item active">C認定</h6>
-              <p class="card-text">C認定取得済</p>
+              <p class="card-text"><%= c_task.user.c_certification.name %></p>
               <h6 class="breadcrumb-item active">B認定</h6>
-              <p class="card-text">B認定取得済</p>
+              <p class="card-text"><%= c_task.user.b_certification.name %></p>
               <h6 class="breadcrumb-item active">A認定</h6>
-              <p class="card-text">未取得</p>
+              <p class="card-text"><%= c_task.user.a_certification.name %></p>
                
  
 
@@ -228,15 +228,15 @@ $(document).ready(function() {
 
 
 
-<div class="p-3 mb-2 bg-dark text-white">C認定実施メンバ一覧  ＊</div>
+<div class="p-3 mb-2 bg-dark text-white">C認定実施メンバ一覧 </div>
                         <div class="card-body">
     <table id="fav-table" class="table table-bordered">
   <thead>
-      <tr><th>名前</th><th>定時起動JOBの確認</th><th>監視ログ定点確認</th><th>監視画面の正常性確認</th><th>業務ログ取得</th><th>セキュリティカードの貸出</th></tr>
+      <tr><th>名前</th><th>所属グループ</th><th>C認定取得</th><th>定時起動JOBの確認</th><th>監視ログ定点確認</th><th>監視画面の正常性確認</th><th>業務ログ取得</th><th>セキュリティカードの貸出</th></tr>
   </thead>
   <tbody>
   <% @c_task.each do |c_task| %>
-      <tr><td><%= c_task.user.name %></td><td><%= c_task.job_confirmation %></td><td><%= c_task.check_the_log %></td><td><%= c_task.surveillance_monitor %></td><td><%= c_task.get_log %></td><td><%= c_task.card_lending %></td></tr>
+      <tr><td><%= c_task.user.name %></td><td><%= c_task.user.group.name %></td><td><%= c_task.user.c_certification.name %></td><td><%= c_task.job_confirmation %></td><td><%= c_task.check_the_log %></td><td><%= c_task.surveillance_monitor %></td><td><%= c_task.get_log %></td><td><%= c_task.card_lending %></td></tr>
       <% end %>
   </tbody>
 </table>

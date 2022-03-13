@@ -157,7 +157,7 @@ $(document).ready(function() {
 
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
-    <label for="inputName">自己評価(1~10の評価で入力)</label>
+    <label for="inputName">自己評価(0~100の評価で入力)</label>
     <%= f.text_area :job_confirmation, class:"input-default", id:"self_assessment", placeholder:"半角数字で入力してください",maxlength:"3" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
@@ -184,7 +184,7 @@ $(document).ready(function() {
 
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
-    <label for="inputName">自己評価(1~10の評価で入力)</label>
+    <label for="inputName">自己評価(0~100の評価で入力)</label>
     <%= f.text_area :get_log, class:"input-default", id:"self_assessment_2", placeholder:"半角数字で入力してください",maxlength:"3" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
@@ -210,7 +210,7 @@ $(document).ready(function() {
 
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
-    <label for="inputName">自己評価(1~10の評価で入力)</label>
+    <label for="inputName">自己評価(0~100の評価で入力)</label>
     <%= f.text_area :surveillance_monitor, class:"input-default", id:"self_assessment_3", placeholder:"半角数字で入力してください",maxlength:"2" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
@@ -236,8 +236,8 @@ $(document).ready(function() {
 
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
-    <label for="inputName">自己評価(1~10の評価で入力)</label>
-    <%= f.text_area :check_the_log, class:"input-default", id:"self_assessment_4", placeholder:"半角数字で入力してください",maxlength:"2" %>
+    <label for="inputName">自己評価(0~100の評価で入力)</label>
+    <%= f.text_area :check_the_log, class:"input-default", id:"self_assessment_4", placeholder:"半角数字で入力してください",maxlength:"3" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -262,8 +262,8 @@ $(document).ready(function() {
 
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
-    <label for="inputName">自己評価(1~10の評価で入力)</label>
-    <%= f.text_area :card_lending, class:"input-default", id:"self_assessment_5", placeholder:"半角数字で入力してください",maxlength:"2" %>
+    <label for="inputName">自己評価(0~100の評価で入力)</label>
+    <%= f.text_area :card_lending, class:"input-default", id:"self_assessment_5", placeholder:"半角数字で入力してください",maxlength:"3" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -291,21 +291,6 @@ $(document).ready(function() {
 
 
 
-
-
-               <div class="card-body">
-    <caption>メンバ一覧</caption>
-    <table id="fav-table" class="table table-bordered">
-  <thead>
-      <tr><th>名前</th><th>年齢</th></tr>
-  </thead>
-  <tbody>
-  <% @user.each do |user| %>
-      <tr><td><%= user.name %></td><td><%= user.birthday %></td></tr>
-      <% end %>
-  </tbody>
-</table>
-</div>
 
 
 
