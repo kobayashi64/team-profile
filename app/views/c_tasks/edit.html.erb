@@ -137,7 +137,7 @@ $(document).ready(function() {
                         </ol>
                         
 
-                        <div class="p-3 mb-2 bg-dark text-white">C認定教育項目一覧  ＊</div>
+                        <div class="p-3 mb-2 bg-dark text-white">C認定一覧 *自己評価0~100で入力 全項目が70以上でC認定取得</div>
                         <p>  </p>
 
                    
@@ -279,7 +279,14 @@ $(document).ready(function() {
   
   </div>
 </div>
-<%= f.submit "Create Account" ,class:"register-red-btn" %>
+<div class="pass-content">
+          <span>判定</span>
+        </div>
+        <div class="c_passed" id='c_passed'>
+        
+   
+        </div>
+<%= f.submit "編集完了" ,class:"register-blue-btn mt-3" %>
 <% end %>
 
 
@@ -287,26 +294,6 @@ $(document).ready(function() {
 </div>
 </div>
 </div>
-
-
-
-
-
-
-               <div class="card-body">
-    <caption>メンバ一覧</caption>
-    <table id="fav-table" class="table table-bordered">
-  <thead>
-      <tr><th>名前</th><th>年齢</th></tr>
-  </thead>
-  <tbody>
-  <% @user.each do |user| %>
-      <tr><td><%= user.name %></td><td><%= user.birthday %></td></tr>
-      <% end %>
-  </tbody>
-</table>
-</div>
-
 
 
 

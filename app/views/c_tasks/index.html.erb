@@ -138,7 +138,7 @@ $(document).ready(function() {
                         </ol>
 
 
-                        <div class="p-3 mb-2 bg-dark text-white">C認定一覧 </div>
+                        <div class="p-3 mb-2 bg-dark text-white">C認定一覧 *自己評価0~100で入力 全項目が70以上でC認定取得</div>
                         
 
        <div class="container">
@@ -260,7 +260,7 @@ $(document).ready(function() {
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                 <%= link_to(c_task.user.name, c_task_path(c_task.id), {class: "btn btn-sm btn-outline-secondary"}) %>
+                                 <%= link_to( 'C認定詳細', c_task_path(c_task.id), {class: "btn btn-sm btn-outline-secondary"}) %>
                                  
                                 </div>
                                 </div>

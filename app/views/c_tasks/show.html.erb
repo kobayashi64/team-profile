@@ -139,13 +139,11 @@ $(document).ready(function() {
 
 
                        
-                        <div class="p-3 mb-2 bg-dark text-white ">C認定教育項目一覧  ＊
-                         <% if user_signed_in? && current_user.id == @c_task.user_id %>
-                         
-                        <%= link_to('編集', edit_c_task_path(@c_task.id), {class: "btn btn-sm btn-outline-secondary text-white "}) %>
-                        
+                        <div class="p-3 mb-2 bg-dark text-white ">C認定教育項目一覧
+                         <% if  current_user.id == @c_task.user_id %>
+                        <%= link_to('編集', edit_c_task_path(@c_task.id), {class: "btn btn-sm btn-outline-secondary text-white m-0 p-10"}) %>
                         <% end %>
-                       
+                        <br>*自己評価0~100で入力 全項目が70以上でC認定取得
                         </div>
                        
                         
@@ -155,11 +153,10 @@ $(document).ready(function() {
      <div class="row">
       <div class="col-12 mb-3 ">
 
-
  <tbody>
   <table class="mytable mb-3">
 
- 
+    <th>C認定</th>
    <th>定時起動JOBの確認</th>
    <th>監視ログ定点確認</th>
    <th>監視画面の正常性確認</th>
@@ -167,7 +164,7 @@ $(document).ready(function() {
    <th>セキュリティカードの貸出</th>
   </tr>
   <tr>
- 
+    <td><%= @c_task.user.c_certification.name %></td>
     <td><%= @c_task.job_confirmation %></td>
     <td><%= @c_task.check_the_log %></td>
     <td><%= @c_task.surveillance_monitor %></td>
