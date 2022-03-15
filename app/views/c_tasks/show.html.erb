@@ -136,8 +136,6 @@ $(document).ready(function() {
                          <% end %>
                         </ol>
 
-
-
                        
                         <div class="p-3 mb-2 bg-dark text-white ">C認定教育項目一覧
                          <% if  current_user.id == @c_task.user_id %>
@@ -146,6 +144,10 @@ $(document).ready(function() {
                         <br>*自己評価0~100で入力 全項目が70以上でC認定取得
                         </div>
                        
+
+                         <% if @c_task.user.c_certification_id == 3 %> 
+                            C認定おめでとうございます
+                            <% end %>
                         
 
     
