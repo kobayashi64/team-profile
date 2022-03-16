@@ -168,18 +168,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const countVal_5 = self_assessment_5.value
 
 
-  const c_passed_card = `<div class="card mb-3" style="max-width: 100%;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <svg class="bd-placeholder-img" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image"><title>Placeholder</title><rect fill="#868e96" width="100%" height="100%"/> <text fill="#dee2e6" dy=".3em" x="50%" y="50%"><%= image_tag user.image, class: "img-fluid"%> </text></svg>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-      <h5 class="card-title">C認定達成です！おめでとうございます！</h5>
-      <p class="card-text">編集完了ボタンを押下し、マイページ(Edit account)から認定ステータスを変更して下さい</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
+  const c_passed_card = `
+  <div class="card text-white bg-warning mb-3" style="max-width:100%;">
+  <div class="card-body">
+    <h5 class="card-title">C認定項目達成です！おめでとうございます！</h5>
+    <p class="card-text">編集完了ボタンを押下し、マイページ(Edit account)からC認定ステータスを変更して下さい</p>
   </div>
 </div>`;
 
@@ -197,18 +190,11 @@ function count_6 (){
   const self_assessment_4  = document.getElementById("self_assessment_4");
   const self_assessment_5  = document.getElementById("self_assessment_5");
 
-  const c_passed_card = `<div class="card mb-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <svg class="bd-placeholder-img" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image"><title>Placeholder</title><rect fill="#868e96" width="100%" height="100%"/><text fill="#dee2e6" dy=".3em" x="50%" y="50%">Image</text></svg>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">C認定達成おめどとうございます！</h5>
-        <p class="card-text">編集完了ボタンを押下し、マイページ(Edit account)から認定ステータスを変更して下さい</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
+  const c_passed_card = `
+  <div class="card text-white bg-warning mb-3" style="max-width:100%;">
+  <div class="card-body">
+    <h5 class="card-title">C認定項目達成です！おめでとうございます！</h5>
+    <p class="card-text">編集完了ボタンを押下し、マイページ(Edit account)からC認定ステータスを取得済へ変更して下さい</p>
   </div>
 </div>`;
 

@@ -138,8 +138,6 @@ $(document).ready(function() {
                         
 
                         <div class="p-3 mb-2 bg-dark text-white">C認定一覧 *自己評価0~100で入力 全項目が70以上でC認定取得</div>
-                        <p>  </p>
-
                    
 <%= form_with model: @c_task, local: true do |f| %>
 
@@ -279,13 +277,10 @@ $(document).ready(function() {
   
   </div>
 </div>
-<div class="pass-content">
-          <span>判定</span>
+
+        <div class="c_passed mt-3" id='c_passed'>
         </div>
-        <div class="c_passed" id='c_passed'>
-        
-   
-        </div>
+
 <%= f.submit "編集完了" ,class:"register-blue-btn mt-3" %>
 <% end %>
 

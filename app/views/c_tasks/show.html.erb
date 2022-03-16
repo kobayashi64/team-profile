@@ -146,7 +146,23 @@ $(document).ready(function() {
                        
 
                          <% if @c_task.user.c_certification_id == 3 %> 
-                            C認定おめでとうございます
+<div class="card mb-3" style="max-width: 100%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+       <%= image_tag 'c_icon.png',class:"img-fluid" %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= @c_task.user.name %>様　C認定取得</h5>
+        <p class="card-text"><br>C認定取得おめでとうございます！次はB認定取得に向けて取り組んでいきましょう！
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
                             <% end %>
                         
 
@@ -180,26 +196,18 @@ $(document).ready(function() {
       
       
 <div class="card" >
-<div class="col-12 mb-3 d-flex">
+<div class="col-10 mb-3 d-flex">
   <div class="card-body">
-   <div class="aaa">
-
-   
+   <div class="document"> 
     <h5 class="card-title">定時起動ジョブの確認</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
 
- <div class="bbb d-flex">
-     <div class="col-sm-6 mt-2">
+ <div class="assessment ">
+     <div class="col-12  mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
     <div class="input-default", id="self_assessment" ><%= @c_task.job_confirmation %></div>
-  </div>
-   <div class="col-sm-2 mt-2 ms-4">
-      <div class="pass-content">
-          <span>判定</span>
-        </div>
-        <div class="pass" id='pass'></div>
   </div>
   </div>
   </div>
@@ -209,25 +217,20 @@ $(document).ready(function() {
 
 <div class="col-12 mb-3 ">
 <div class="card" >
-<div class="col-12 mb-3 d-flex">
+<div class="col-10 mb-3 d-flex">
   <div class="card-body">
-   <div class="aaa">
+   <div class="document">
     <h5 class="card-title">定例業務ログ取得</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
 
- <div class="bbb d-flex">
-     <div class="col-sm-6 mt-2">
+ <div class="assessment d-flex">
+     <div class="col-sm-12mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
     <div class="input-default", id="self_assessment_2" ><%= @c_task.get_log %></div>
   </div>
-   <div class="col-sm-2 mt-2 ms-4">
-      <div class="pass-content">
-          <span>判定</span>
-        </div>
-        <div class="pass" id='pass_2'></div>
-  </div>
+ 
   </div>
   </div>
 </div>
@@ -235,25 +238,21 @@ $(document).ready(function() {
 
 <div class="col-12 mb-3 ">
 <div class="card" >
-<div class="col-12 mb-3 d-flex">
+<div class="col-10 mb-3 d-flex">
   <div class="card-body">
-   <div class="aaa">
+   <div class="document">
     <h5 class="card-title">監視画面の正常性確認</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
 
- <div class="bbb d-flex">
-     <div class="col-sm-6 mt-2">
+<div class="assessment d-flex">
+     <div class="col-sm-12 mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
     <div class="input-default", id="self_assessment_3" ><%=  @c_task.surveillance_monitor %></div>
   </div>
-   <div class="col-sm-2 mt-2 ms-4">
-      <div class="pass-content">
-          <span>判定</span>
-        </div>
-        <div class="pass" id='pass_3'></div>
-  </div>
+
+  
   </div>
   </div>
 </div>
@@ -261,25 +260,20 @@ $(document).ready(function() {
 
 <div class="col-12 mb-3 ">
 <div class="card" >
-<div class="col-12 mb-3 d-flex">
+<div class="col-10 mb-3 d-flex">
   <div class="card-body">
-   <div class="aaa">
+   <div class="document">
     <h5 class="card-title">監視ログ定点確認</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
 
  <div class="bbb d-flex">
-     <div class="col-sm-6 mt-2">
+     <div class="col-sm-12 mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
     <div class="input-default", id="self_assessment_4" ><%=  @c_task.check_the_log %></div>
   </div>
-   <div class="col-sm-2 mt-2 ms-4">
-      <div class="pass-content">
-          <span>判定</span>
-        </div>
-        <div class="pass" id='pass_4'></div>
-  </div>
+
   </div>
   </div>
 </div>
@@ -287,27 +281,20 @@ $(document).ready(function() {
 
 <div class="col-12 mb-3 ">
 <div class="card" >
-<div class="col-12 mb-3 d-flex">
+<div class="col-10 mb-3 d-flex">
   <div class="card-body">
-   <div class="aaa">
+   <div class="document">
     <h5 class="card-title">セキュリティカードの貸出</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
 
- <div class="bbb d-flex">
-     <div class="col-sm-6 mt-2">
+<div class="assessment d-flex">
+     <div class="col-sm-12 mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
       <div class="input-default", id="self_assessment_5" ><%=  @c_task.card_lending %></div>
   </div>
-   <div class="col-sm-2 mt-2 ms-4">
-      <div class="pass-content">
-          <span>判定</span>
-        </div>
-        <div class="pass" id='pass_5'></div>
- 
-  
-</div>
+
 </div>
 
 
