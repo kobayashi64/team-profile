@@ -6,15 +6,10 @@ class TeamsController < ApplicationController
     end
     @q = User.ransack(params[:q])
     @teams = @q.result
-    
   end
 
   def show
     @user = User.find(params[:id])
-  end
-
-  def search
-
   end
 
 end
