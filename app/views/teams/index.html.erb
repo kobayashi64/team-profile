@@ -5,8 +5,13 @@
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
+            <%= search_form_for @q, url: teams_path, html: {id: "detailed-search-form"} do |f| %>
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
+                <div class="input-group d-sm-none">
+                
+     <%= f.text_field :name, placeholder: 'ユーザ名',class:"form-control", value: params[:q]&.dig(:name) %>
+    <%= f.submit class:'fas fa-search' ,class:"btn btn-primary" %>
+   
                     
                 </div>
             </form>
@@ -73,22 +78,23 @@
                         </ol>
                         </div>
                  
-                 <div class="row">
-                    <div class="col-8 mt-3 d-none d-md-block">
-  <%= search_form_for @q, url: teams_path, html: {id: "detailed-search-form"} do |f| %>
+                 <div class="row d-none d-sm-block">
+                    <div class="col-12 mt-3 ">
+  
      <%= f.label :group_id_eq, '所属グループ' %>
       <%= f.collection_check_boxes(:group_id_in, Group.all, :id, :name,) %>
        </div>
 
-<div class="col-10 ">
+<div class="col-12 ">
       <div class="input-group  mt-3 mb-3">
      <%= f.text_field :name, placeholder: 'ユーザ名',class:"form-control", value: params[:q]&.dig(:name) %>
     <%= f.submit class:'fas fa-search' ,class:"btn btn-primary" %>
     </div>
      </div>
      
-<% end %>
+
 </div>
+<% end %>
 </div>
 </div>
                     <div class="container">
