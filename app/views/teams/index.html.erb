@@ -4,6 +4,20 @@
             <%= link_to("Team Profilers", root_path, {class: "navbar-brand ps-3"}) %>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+
+
+                        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw bg-secondary"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">                     
+                        <li><%= link_to("New account", new_user_registration_path, {class: 'btn dropdown-item'}) %></li>
+                        <li><%= link_to("Edit account", edit_user_registration_path, {class: 'btn dropdown-item'}) %></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><%= link_to('Logout', destroy_user_session_path, {method: :delete, class: 'btn dropdown-item'}) %>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
             <!-- Navbar Search-->
             <%= search_form_for @q, url: teams_path, html: {id: "detailed-search-form"} do |f| %>
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
@@ -16,18 +30,7 @@
                 </div>
             </form>
             <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw bg-secondary"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">                     
-                        <li><%= link_to("New account", new_user_registration_path, {class: 'btn dropdown-item'}) %></li>
-                        <li><%= link_to("Edit account", edit_user_registration_path, {class: 'btn dropdown-item'}) %></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><%= link_to('Logout', destroy_user_session_path, {method: :delete, class: 'btn dropdown-item'}) %>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
