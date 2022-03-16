@@ -194,7 +194,7 @@ function count_6 (){
   <div class="card text-white bg-warning mb-3" style="max-width:100%;">
   <div class="card-body">
     <h5 class="card-title">C認定項目達成です！おめでとうございます！</h5>
-    <p class="card-text">編集完了ボタンを押下し、マイページ(Edit account)からC認定ステータスを取得済へ変更して下さい</p>
+    <p class="card-text">完了ボタンを押下後、マイページ(Edit account)からC認定ステータスを取得済へ変更して下さい</p>
   </div>
 </div>`;
 

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
   root to: "teams#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :users, only: [:index] 
   resources :teams, only: [:index,:show] 
   resources :a_tasks, only: [:index,:show,:new,:create,:edit,:update]
   resources :b_tasks, only: [:index,:show,:new,:create,:edit,:update]

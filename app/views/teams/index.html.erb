@@ -46,41 +46,21 @@
                             </a>
                             <div class="collapse" id="pagesCollapseAuth"" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                     <%= link_to("A認定", a_tasks_path, {class: "nav-link"}) %> 
-                                     <%= link_to("B認定", b_tasks_path, {class: "nav-link"}) %> 
-                                     <%= link_to("C認定", c_tasks_path, {class: "nav-link"}) %> 
+                                     <%= link_to("A認定一覧", a_tasks_path, {class: "nav-link"}) %> 
+                                     <%= link_to("B認定一覧", b_tasks_path, {class: "nav-link"}) %> 
+                                     <%= link_to("C認定一覧", c_tasks_path, {class: "nav-link"}) %> 
                                 </nav>
                             </div>
 
-                 
 
-                                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                メンバーリスト
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <% @user.each do |user| %>
-                                    <%= link_to(user.name, team_path(user.id), {class: "nav-link"}) %> 
-                                    <% end %>
-                                </nav>
-                            </div>
 
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
-                            </a>
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
-                            </a>
+                            <div class="sb-sidenav-menu-heading">メンバ情報</div>
+                     <%= link_to("メンバ情報一覧表", users_path, {class: "nav-link"}) %>              
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        Team Profilers
                     </div>
                 </nav>
             </div>
@@ -89,11 +69,8 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">運用メンバ一覧</h1>
                         <ol class="breadcrumb mb-4">
-                         <% if user_signed_in? %>
                          <li class="breadcrumb-item active"><%= "#{current_user.name}さんがログイン中です" %></li>
-                         <% else %>
-                         <li><%= link_to("Click here to log in", new_user_session_path, {class: "breadcrumb-item active"}) %></li>
-                         <% end %>
+                        
                         </ol>
                     <div class="container">
                      <div class="row">
@@ -124,12 +101,8 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
+                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                            
                         </div>
                     </div>
                 </footer>

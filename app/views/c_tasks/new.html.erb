@@ -1,30 +1,5 @@
- <head>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/css/theme.default.min.css">
-<style>
-#fav-table th {
-    background-color:pink;
-}
-
-.sorter-false {
-    background-image: none;
-}
-</style>
-<script>
-$(document).ready(function() {
-    $('#fav-table').tablesorter({
-            headers: {
-               0: { sorter: false }
-            }
-    });
-});
-</script>
-</head>
-
- 
- <div class="sb-nav-fixed">
+<div class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <%= link_to("Team Profilers", root_path, {class: "navbar-brand ps-3"}) %>
@@ -37,7 +12,6 @@ $(document).ready(function() {
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
             </form>
-            
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
@@ -59,68 +33,34 @@ $(document).ready(function() {
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">メニュー</div>
                             <a class="nav-link" href="/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                運用メンバ一覧 
-                            </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                メンバーリスト
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#">自社メンバ一覧</a>
-                                    <a class="nav-link" href="#">マイプロフィール</a>
-                                </nav>
-                            </div>
-                            
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                運用メンバ一覧
+                            </a> 
+                            <%= link_to("マイプロフィール", team_path(current_user.id), {class: "nav-link"}) %>
+
+
+                            <div class="sb-sidenav-menu-heading">教育目標</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                教育目標
+                                認定制度
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        認定制度
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">A認定</a>
-                                            <a class="nav-link" href="#">B認定</a>
-                                            <%= link_to("C認定", c_tasks_path, {class: "nav-link"}) %>
-                                            <a class="nav-link" href="#">C認定</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
+                            <div class="collapse" id="pagesCollapseAuth"" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                     <%= link_to("A認定一覧", a_tasks_path, {class: "nav-link"}) %> 
+                                     <%= link_to("B認定一覧", b_tasks_path, {class: "nav-link"}) %> 
+                                     <%= link_to("C認定一覧", c_tasks_path, {class: "nav-link"}) %> 
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
-                            </a>
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
-                            </a>
+
+
+
+                            <div class="sb-sidenav-menu-heading">メンバ情報</div>
+                     <%= link_to("メンバ情報一覧表", users_path, {class: "nav-link"}) %>              
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        Team Profilers
                     </div>
                 </nav>
             </div>
@@ -129,11 +69,7 @@ $(document).ready(function() {
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">教育タスク一覧</h1>
                         <ol class="breadcrumb mb-4">
-                         <% if user_signed_in? %>
                          <li class="breadcrumb-item active"><%= "#{current_user.name}さんがログイン中です" %></li>
-                         <% else %>
-                         <li><%= link_to("Click here to log in", new_user_session_path, {class: "breadcrumb-item active"}) %></li>
-                         <% end %>
                         </ol>
                         
 
@@ -144,7 +80,7 @@ $(document).ready(function() {
 
                    
 <%= form_with model: @c_task, local: true do |f| %>
-
+<%= render 'layouts/error_messages', model:f.object %>
     <div class="container">
      <div class="row">
       <div class="col-12 mb-3 ">
@@ -213,7 +149,7 @@ $(document).ready(function() {
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
-    <%= f.text_area :surveillance_monitor, class:"input-default", id:"self_assessment_3", placeholder:"半角数字で入力してください",maxlength:"2" %>
+    <%= f.text_area :surveillance_monitor, class:"input-default", id:"self_assessment_3", placeholder:"半角数字で入力してください",maxlength:"3" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -278,10 +214,12 @@ $(document).ready(function() {
 </div>
 
 
-  
+
   </div>
+    <div class="c_passed mt-3" id='c_passed'>
+        </div>
 </div>
-<%= f.submit "Create Account" ,class:"register-red-btn" %>
+<%= f.submit "新規登録完了" ,class:"register-blue-btn" %>
 <% end %>
 
 

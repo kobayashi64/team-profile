@@ -25,7 +25,7 @@ $(document).ready(function() {
 </head>
 
  
- <div class="sb-nav-fixed">
+<div class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <%= link_to("Team Profilers", root_path, {class: "navbar-brand ps-3"}) %>
@@ -38,7 +38,6 @@ $(document).ready(function() {
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
             </form>
-            
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
@@ -60,68 +59,34 @@ $(document).ready(function() {
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">メニュー</div>
                             <a class="nav-link" href="/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                運用メンバ一覧 
-                            </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                メンバーリスト
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#">自社メンバ一覧</a>
-                                    <a class="nav-link" href="#">マイプロフィール</a>
-                                </nav>
-                            </div>
-                            
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                運用メンバ一覧
+                            </a> 
+                            <%= link_to("マイプロフィール", team_path(current_user.id), {class: "nav-link"}) %>
+
+
+                            <div class="sb-sidenav-menu-heading">教育目標</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                教育目標
+                                認定制度
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        認定制度
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">A認定</a>
-                                            <a class="nav-link" href="#">B認定</a>
-                                            <%= link_to("C認定", c_tasks_path, {class: "nav-link"}) %>
-                                            <a class="nav-link" href="#">C認定</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
+                            <div class="collapse" id="pagesCollapseAuth"" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                     <%= link_to("A認定一覧", a_tasks_path, {class: "nav-link"}) %> 
+                                     <%= link_to("B認定一覧", b_tasks_path, {class: "nav-link"}) %> 
+                                     <%= link_to("C認定一覧", c_tasks_path, {class: "nav-link"}) %> 
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
-                            </a>
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
-                            </a>
+
+
+
+                            <div class="sb-sidenav-menu-heading">メンバ情報</div>
+                     <%= link_to("メンバ情報一覧表", users_path, {class: "nav-link"}) %>              
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        Team Profilers
                     </div>
                 </nav>
             </div>
@@ -130,15 +95,11 @@ $(document).ready(function() {
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">教育タスク一覧</h1>
                         <ol class="breadcrumb mb-4">
-                         <% if user_signed_in? %>
                          <li class="breadcrumb-item active"><%= "#{current_user.name}さんがログイン中です" %></li>
-                         <% else %>
-                         <li><%= link_to("Click here to log in", new_user_session_path, {class: "breadcrumb-item active"}) %></li>
-                         <% end %>
                         </ol>
 
 
-                        <div class="p-3 mb-2 bg-dark text-white">C認定一覧 *自己評価0~100で入力 全項目が70以上でC認定取得</div>
+                        <div class="p-3 mb-2 bg-dark text-white">C認定一覧　*項目一覧へ自己評価0~100で入力 全項目が70以上でC認定取得</div>
                         
 
        <div class="container">
@@ -151,7 +112,8 @@ $(document).ready(function() {
                             <%= image_tag c_task.user.image,  class: "img-fluid"%></div>
                                                         <div class="card-body">
                                
-                                 <%= link_to('C認定詳細・編集', c_task_path(c_task.id), {class: "btn btn-sm btn-outline-secondary"}) %>
+                                 <%= link_to('C認定詳細', c_task_path(c_task.id), {class: "btn btn-sm btn-outline-secondary"}) %>
+                                 <%= link_to('編集', edit_c_task_path(c_task.id), {class: "btn btn-sm btn-outline-secondary"}) %>
                                  
                                 </div>
                                 </div>
@@ -161,7 +123,7 @@ $(document).ready(function() {
        <div class="card border-light mb-3">
           
 
-            <div class="card-header">プロフィール</div>
+            <div class="card-header">マイプロフィール</div>
             <div class="card-body">
             <h6 class="breadcrumb-item active">氏名</h6>
               <p class="card-text"><%= c_task.user.name %></p>
@@ -181,7 +143,7 @@ $(document).ready(function() {
            <tbody>
   <table class="mytable mb-3">
 
- 
+    <h5><%= "#{c_task.user.name}さんのC認定項目一覧" %></h5>
    <th>定時起動JOBの確認</th>
    <th>監視ログ定点確認</th>
    <th>監視画面の正常性確認</th>
@@ -198,12 +160,6 @@ $(document).ready(function() {
   </tr>
 </table>
 </tbody>
-
-
-
-
-
-
                     <% end %>
 
                                            

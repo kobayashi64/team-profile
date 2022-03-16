@@ -12,11 +12,9 @@ class CTasksController < ApplicationController
 
   def edit
     @c_task = CTask.find(params[:id])
-    @user = User.all
   end
 
   def new
-    @user = User.all
     @c_task = CTask.new
   end
 
@@ -34,7 +32,7 @@ class CTasksController < ApplicationController
     if @c_task.save
       redirect_to root_path
     else
-      render :index
+      render :new
     end
   end
 
