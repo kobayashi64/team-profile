@@ -77,14 +77,16 @@
                     <div class="col-6 mt-3">
   <%= search_form_for @q, url: teams_path, html: {id: "detailed-search-form"} do |f| %>
      
-       <%= f.label :group_id_eq, '所属グループ' %>
-      <%= f.collection_check_boxes(:group_id_in, Group.all, :id, :name,) %>
+       
 
       <div class="input-group mt-3  mb-3">
 
      <%= f.text_field :name, placeholder: 'ユーザ名',class:"form-control", value: params[:q]&.dig(:name) %>
     <%= f.submit class:'fas fa-search' ,class:"btn btn-primary" %>
+    
      </div>
+     <%= f.label :group_id_eq, '所属グループ' %>
+      <%= f.collection_check_boxes(:group_id_in, Group.all, :id, :name,) %>
      </div>
      
 <% end %>
