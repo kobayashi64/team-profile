@@ -8,13 +8,14 @@
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw bg-secondary"></i></a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">                     
                         <li><%= link_to("New account", new_user_registration_path, {class: 'btn dropdown-item'}) %></li>
                         <li><%= link_to("Edit account", edit_user_registration_path, {class: 'btn dropdown-item'}) %></li>
@@ -66,29 +67,26 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                      <div class="top-menu d-flex justify-content-between">
-                        <div class="top-left">    
-                        <h1 class="col-12 mt-4">運用メンバ一覧</h1>
+                        <h1 class="mt-4">運用メンバ一覧</h1>
                         <ol class="breadcrumb mb-4">
                          <li class="breadcrumb-item active"><%= "#{current_user.name}さんがログイン中です" %></li>
                         </ol>
-                        </div>
-                    
-                    <div class="col-6 mt-3">
-  <%= search_form_for @q, url: teams_path, html: {id: "detailed-search-form"} do |f| %>
-     
-       <%= f.label :group_id_eq, '所属グループ' %>
+
+                      <%= search_form_for @q, url: search_teams_path, html: {id: "detailed-search-form"} do |f| %>
+                         <div class="search-field">
+      <%= f.label :name, 'ユーザ名' %>
+      <br>
+      <%= f.text_field :name, placeholder: 'ユーザ名',value: params[:q]&.dig(:name) %>
+    </div>
+      <div class="search-field">
+      <%= f.label :group_id_eq, '所属グループ' %>
+      <br>
       <%= f.collection_check_boxes(:group_id_in, Group.all, :id, :name,) %>
+    </div>
+    <%= f.submit '検索' %>
+      
+  <% end %>
 
-      <div class="input-group mt-3  mb-3">
-
-     <%= f.text_field :name, placeholder: 'ユーザ名',class:"form-control", value: params[:q]&.dig(:name) %>
-    <%= f.submit class:'fas fa-search' ,class:"btn btn-primary" %>
-     </div>
-     </div>
-     
-<% end %>
-</div>
 
                     <div class="container">
                      <div class="row">
@@ -128,3 +126,18 @@
         </div>
     </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+
+<h3>検索ページ</h3>
+<h3><%= link_to 'トップページへ戻る', root_path%></h3>
+<div class='item-contents' id="detailed-search-result-wrapper">
+  <%= search_form_for @q, url: search_teams_path, html: {id: "detailed-search-form"} do |f| %>
+     <div class="search-field">
+      <%= f.label :name_cont, '商品名' %>
+      <br>
+      <%= f.text_field :name_cont, placeholder: '商品名' %>
+    </div>
+    <%= f.submit '検索' %>
+  <% end %>
+
+</div>
