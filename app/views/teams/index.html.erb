@@ -5,7 +5,7 @@
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
 
-
+                     <!-- Navbar-->
                         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw bg-secondary"></i></a>
@@ -29,7 +29,7 @@
                     
                 </div>
             </form>
-            <!-- Navbar-->
+           <% end %>
 
         </nav>
         <div id="layoutSidenav">
@@ -75,7 +75,7 @@
                     <div class="container-fluid px-4">
                       <div class="top-menu d-flex justify-content-between">
                         <div class="top-left">    
-                        <h1 class="col-12 mt-4">運用メンバ一覧</h1>
+                        <h1 class="col-lg-10-mb-12 mt-4">運用メンバ一覧</h1>
                         <ol class="breadcrumb mb-4">
                          <li class="breadcrumb-item active"><%= "#{current_user.name}さんがログイン中です" %></li>
                         </ol>
@@ -83,12 +83,12 @@
                  
                  <div class="row d-none d-sm-block">
                     <div class="col-12 mt-3 ">
-  
+   <%= search_form_for @q, url: teams_path, html: {id: "detailed-search-form"} do |f| %>
      <%= f.label :group_id_eq, '所属グループ' %>
       <%= f.collection_check_boxes(:group_id_in, Group.all, :id, :name,) %>
        </div>
 
-<div class="col-12 ">
+<div class="col-10 ">
       <div class="input-group  mt-3 mb-3">
      <%= f.text_field :name, placeholder: 'ユーザ名',class:"form-control", value: params[:q]&.dig(:name) %>
     <%= f.submit class:'fas fa-search' ,class:"btn btn-primary" %>
