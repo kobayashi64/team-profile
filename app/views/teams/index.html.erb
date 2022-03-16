@@ -1,5 +1,4 @@
-
- <div class="sb-nav-fixed">
+<div class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <%= link_to("Team Profilers", root_path, {class: "navbar-brand ps-3"}) %>
@@ -73,25 +72,25 @@
                          <li class="breadcrumb-item active"><%= "#{current_user.name}さんがログイン中です" %></li>
                         </ol>
                         </div>
-                    
-                    <div class="col-6 mt-3">
+                 
+                 <div class="row">
+                    <div class="col-8 mt-3 d-none d-md-block">
   <%= search_form_for @q, url: teams_path, html: {id: "detailed-search-form"} do |f| %>
-     
-       
-
-      <div class="input-group mt-3  mb-3">
-
-     <%= f.text_field :name, placeholder: 'ユーザ名',class:"form-control", value: params[:q]&.dig(:name) %>
-    <%= f.submit class:'fas fa-search' ,class:"btn btn-primary" %>
-    
-     </div>
      <%= f.label :group_id_eq, '所属グループ' %>
       <%= f.collection_check_boxes(:group_id_in, Group.all, :id, :name,) %>
+       </div>
+
+<div class="col-10 ">
+      <div class="input-group  mt-3 mb-3">
+     <%= f.text_field :name, placeholder: 'ユーザ名',class:"form-control", value: params[:q]&.dig(:name) %>
+    <%= f.submit class:'fas fa-search' ,class:"btn btn-primary" %>
+    </div>
      </div>
      
 <% end %>
 </div>
-
+</div>
+</div>
                     <div class="container">
                      <div class="row">
                       <% @teams.each do |user| %>
