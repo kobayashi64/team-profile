@@ -2,7 +2,6 @@ class CTasksController < ApplicationController
   def index
     @user = User.all
     @c_task = CTask.all
-
     @c_tasks = CTask.where(user_id: current_user.id).includes(:user).order('created_at DESC')
   end
 
@@ -30,7 +29,7 @@ class CTasksController < ApplicationController
   def create
     @c_task = CTask.new(c_task_params)
     if @c_task.save
-      redirect_to root_path
+      redirect_to c_task_path(@c_task.id)
     else
       render :new
     end
