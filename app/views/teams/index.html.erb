@@ -3,21 +3,11 @@
             <!-- Navbar Brand-->
             <%= link_to("Team Profilers", root_path, {class: "navbar-brand ps-3"}) %>
             <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 " id="sidebarToggle" href="#!"><a class=" btn btn-dark">Menu・Show / Hide</a></button>
+            
 
                      <!-- Navbar-->
-                        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw bg-secondary"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">                     
-                        <li><%= link_to("New account", new_user_registration_path, {class: 'btn dropdown-item'}) %></li>
-                        <li><%= link_to("Edit account", edit_user_registration_path, {class: 'btn dropdown-item'}) %></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><%= link_to('Logout', destroy_user_session_path, {method: :delete, class: 'btn dropdown-item'}) %>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+               
             <!-- Navbar Search-->
             <%= search_form_for @q, url: teams_path, html: {id: "detailed-search-form"} do |f| %>
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
@@ -37,12 +27,12 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">メニュー</div>
-                            <a class="nav-link" href="/">
-                                運用メンバ一覧
-                            </a> 
+                            <div class="sb-sidenav-menu-heading">メニュー</div>  
+                             <%= link_to("運用メンバ一覧", root_path, {class: "nav-link"}) %>  
+                             <%= link_to("メンバ情報一覧表", users_path, {class: "nav-link"}) %>  
+                             <% if user_signed_in? %>
                             <%= link_to("マイプロフィール", team_path(current_user.id), {class: "nav-link"}) %>
-
+                            <% end %>
 
                             <div class="sb-sidenav-menu-heading">教育目標</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
@@ -57,17 +47,33 @@
                                      <%= link_to("C認定一覧", c_tasks_path, {class: "nav-link"}) %> 
                                 </nav>
                             </div>
+                    
+
+                        <div class="sb-sidenav-menu-heading">アカウント</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                アカウントメニュー
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                        <%= link_to("New account", new_user_registration_path, {class: 'nav-link'}) %>
+                        <%= link_to("Edit account", edit_user_registration_path, {class: 'nav-link'}) %>
+                        <%= link_to('Logout', destroy_user_session_path, {method: :delete, class: 'nav-link'}) %>
+                                </nav>
+                            </div>
 
 
+                        
 
-                            <div class="sb-sidenav-menu-heading">メンバ情報</div>
-                     <%= link_to("メンバ情報一覧表", users_path, {class: "nav-link"}) %>              
+
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
                         Team Profilers
                     </div>
+
                 </nav>
             </div>
             <div id="layoutSidenav_content">
@@ -77,7 +83,13 @@
                         <div class="top-left">    
                         <h1 class="col-lg-10-mb-12 mt-4">運用メンバ一覧</h1>
                         <ol class="breadcrumb mb-4">
+
+                         <% if user_signed_in? %>
                          <li class="breadcrumb-item active"><%= "#{current_user.name}さんがログイン中です" %></li>
+                         <% else %>
+                         <li><%= link_to("Click here to log in", new_user_session_path, {class: "breadcrumb-item active"}) %></li>
+                         <% end %>
+                       
                         </ol>
                         </div>
                  

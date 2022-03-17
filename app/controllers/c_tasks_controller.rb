@@ -1,4 +1,7 @@
 class CTasksController < ApplicationController
+  before_action :move_to_signed_in
+
+
   def index
     @user = User.all
     @c_task = CTask.all
@@ -41,4 +44,9 @@ class CTasksController < ApplicationController
     params.require(:c_task).permit(:card_lending, :get_log, :surveillance_monitor, :check_the_log,
                                    :job_confirmation).merge(user_id: current_user.id)
   end
+
+  def move_to_signed_in
+    redirect_to user_session_path unless user_signed_in?
+  end
+
 end

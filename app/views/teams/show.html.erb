@@ -4,7 +4,11 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">運用メンバ一覧</h1>
                         <ol class="breadcrumb mb-4">
+                         <% if user_signed_in? %>
                          <li class="breadcrumb-item active"><%= "#{current_user.name}さんがログイン中です" %></li>
+                         <% else %>
+                         <li><%= link_to("Click here to log in", new_user_session_path, {class: "breadcrumb-item active"}) %></li>
+                         <% end %>
                         </ol>
 
                    <div class="container">
