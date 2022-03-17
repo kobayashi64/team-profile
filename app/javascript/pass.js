@@ -169,8 +169,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   const c_passed_card = `
-  <div class="card text-white bg-warning mb-3" style="max-width:100%;">
+  <div class="card text-white bg-warning mb-3 mt-3" style="max-width:100%;">
   <div class="card-body">
+  
     <h5 class="card-title">C認定項目達成です！おめでとうございます！</h5>
     <p class="card-text">編集完了ボタンを押下し、マイページ(Edit account)からC認定ステータスを変更して下さい</p>
   </div>
