@@ -7,11 +7,11 @@ function count (){
     const countVal = self_assessment.value
     const passNum  = document.getElementById("pass");
     if (countVal < 50) {
-      passNum.innerHTML = ("がんばりましょう！") ;
+      passNum.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
      } else if (50 <= countVal && countVal < 70) {
-      passNum.innerHTML = ("惜しい！もう一息です。")
+      passNum.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
      } else if (70 <= countVal) {
-      passNum.innerHTML = ("合格です！おめでとう！")
+      passNum.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
      }
   });
   };
@@ -25,12 +25,12 @@ function count_2 (){
     const countVal = self_assessment_2.value
     const passNum  = document.getElementById("pass_2");
     if (countVal < 50) {
-      passNum.innerHTML = ("がんばりましょう！") ;
-     } else if (50 <= countVal && countVal < 70) {
-      passNum.innerHTML = ("惜しい！もう一息です。")
-     } else if (70 <= countVal) {
-      passNum.innerHTML = ("合格です！おめでとう！")
-     }
+      passNum.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
+    } else if (50 <= countVal && countVal < 70) {
+     passNum.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
+    } else if (70 <= countVal) {
+     passNum.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
+    }
   });
   };
 
@@ -44,12 +44,12 @@ function count_3 (){
     const countVal = self_assessment_3.value
     const passNum  = document.getElementById("pass_3");
     if (countVal < 50) {
-      passNum.innerHTML = ("がんばりましょう！") ;
-     } else if (50 <= countVal && countVal < 70) {
-      passNum.innerHTML = ("惜しい！もう一息です。")
-     } else if (70 <= countVal) {
-      passNum.innerHTML = ("合格です！おめでとう！")
-     }
+      passNum.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
+    } else if (50 <= countVal && countVal < 70) {
+     passNum.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
+    } else if (70 <= countVal) {
+     passNum.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
+    }
   });
   };
 
@@ -63,12 +63,12 @@ function count_4 (){
     const countVal = self_assessment_4.value
     const passNum  = document.getElementById("pass_4");
     if (countVal < 50) {
-      passNum.innerHTML = ("がんばりましょう！") ;
-     } else if (50 <= countVal && countVal < 70) {
-      passNum.innerHTML = ("惜しい！もう一息です。")
-     } else if (70 <= countVal) {
-      passNum.innerHTML = ("合格です！おめでとう！")
-     }
+      passNum.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
+    } else if (50 <= countVal && countVal < 70) {
+     passNum.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
+    } else if (70 <= countVal) {
+     passNum.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
+    }
   });
   };
 
@@ -82,12 +82,12 @@ function count_5 (){
     const countVal = self_assessment_5.value
     const passNum  = document.getElementById("pass_5");
     if (countVal < 50) {
-      passNum.innerHTML = ("がんばりましょう！") ;
-     } else if (50 <= countVal && countVal < 70) {
-      passNum.innerHTML = ("惜しい！もう一息です。")
-     } else if (70 <= countVal) {
-      passNum.innerHTML = ("合格です！おめでとう！")
-     }
+      passNum.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
+    } else if (50 <= countVal && countVal < 70) {
+     passNum.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
+    } else if (70 <= countVal) {
+     passNum.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
+    }
   });
   };
 
@@ -105,52 +105,52 @@ document.addEventListener('DOMContentLoaded', function() {
     const countVal = self_assessment.value
     const passNum  = document.getElementById("pass");
     if (countVal < 50) {
-      passNum.innerHTML = ("がんばりましょう！") ;
-     } else if (50 <= countVal && countVal < 70) {
-      passNum.innerHTML = ("惜しい！もう一息です。")
-     } else if (70 <= countVal) {
-      passNum.innerHTML = ("合格です！おめでとう！")
-     }
+      passNum.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
+    } else if (50 <= countVal && countVal < 70) {
+     passNum.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
+    } else if (70 <= countVal) {
+     passNum.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
+    }
 
      const countVal_2 = self_assessment_2.value
      const passNum_2  = document.getElementById("pass_2");
      if (countVal_2 < 50) {
-       passNum_2.innerHTML = ("がんばりましょう！") ;
-      } else if (50 <= countVal_2 && countVal_2 < 70) {
-       passNum_2.innerHTML = ("惜しい！もう一息です。")
-      } else if (70 <= countVal_2) {
-       passNum_2.innerHTML = ("合格です！おめでとう！")
-      }
+      passNum_2.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
+    } else if (50 <= countVal && countVal < 70) {
+     passNum_2.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
+    } else if (70 <= countVal) {
+     passNum_2.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
+    }
 
       const countVal_3 = self_assessment_3.value
       const passNum_3  = document.getElementById("pass_3");
       if (countVal_3 < 50) {
-        passNum_3.innerHTML = ("がんばりましょう！") ;
-       } else if (50 <= countVal_3 && countVal_3 < 70) {
-        passNum_3.innerHTML = ("惜しい！もう一息です。")
-       } else if (70 <= countVal_3) {
-        passNum_3.innerHTML = ("合格です！おめでとう！")
-       }
+        passNum_3.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
+      } else if (50 <= countVal && countVal < 70) {
+       passNum_3.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
+      } else if (70 <= countVal) {
+       passNum_3.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
+      }
 
        const countVal_4 = self_assessment_4.value
        const passNum_4  = document.getElementById("pass_4");
        if (countVal_4 < 50) {
-         passNum_4.innerHTML = ("がんばりましょう！") ;
-        } else if (50 <= countVal_4 && countVal_4 < 70) {
-         passNum_4.innerHTML = ("惜しい！もう一息です。")
-        } else if (70 <= countVal_4) {
-         passNum_4.innerHTML = ("合格です！おめでとう！")
-        }
+        passNum_4.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
+      } else if (50 <= countVal && countVal < 70) {
+       passNum_4.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
+      } else if (70 <= countVal) {
+       passNum_4.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
+      }
 
         const countVal_5 = self_assessment_5.value
         const passNum_5  = document.getElementById("pass_5");
         if (countVal_5 < 50) {
-          passNum_5.innerHTML = ("がんばりましょう！") ;
-         } else if (50 <= countVal_5 && countVal_5 < 70) {
-          passNum_5.innerHTML = ("惜しい！もう一息です。")
-         } else if (70 <= countVal_5) {
-          passNum_5.innerHTML = ("合格です！おめでとう！")
-         }
+          passNum_5.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
+        } else if (50 <= countVal && countVal < 70) {
+         passNum_5.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
+        } else if (70 <= countVal) {
+         passNum_5.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
+        }
 });
 
 
