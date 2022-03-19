@@ -38,25 +38,37 @@ $(document).ready(function() {
                         </ol>
 
 
-                        <div class="p-3 mb-2 bg-dark text-white">C認定一覧　*項目一覧へ自己評価0~100で入力 全項目が70以上でC認定取得</div>
+                        <div class="p-3 mb-2 bg-dark text-white">C認定一覧　*項目一覧へ自己評価0~100で入力 全項目が70以上でC認定取得
+                        </div>
+
+                                                    <div class="row d-flex">
+                                    <div class="col-6">
+                                <div class="card bg-danger mb-3">
+                                  
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <%= link_to('A認定一覧はこちら', a_tasks_path, {class: "small text-white stretched-link"}) %>
+                                        <div class="small text-black"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <div class="col-6">
+                                <div class="card bg-primary mb-3">
+                                  
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <%= link_to('B認定一覧はこちら', b_tasks_path, {class: "small text-white stretched-link"}) %>
+                                        <div class="small text-black"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
                         
 
        <div class="container">
                      <div class="row d-flex">
                      <% if user_signed_in?%>
                       <% @c_tasks.each do |c_task| %>
-                        <% if @c_tasks.present? %>
-                            <div class="col-12">
-                                <div class="card bg-light text- black mb-4">
-                                  
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <%= link_to('C認定編集はこちら', edit_c_task_path(c_task.id), {class: "small text-black stretched-link"}) %>
-                                        <div class="small text-black"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                 <% end %>
+
 
                          <div class="col-lg-2 col-4 mb-3 ">
                         <div class="card mb-6 shadow-sm">
@@ -65,7 +77,7 @@ $(document).ready(function() {
                                                         <div class="card-body">
                                
                                  <%= link_to('C認定詳細', c_task_path(c_task.id), {class: "btn btn-sm btn-outline-secondary"}) %>
-                                 
+                                 <%= link_to('編集', edit_c_task_path(c_task.id), {class: "btn btn-sm btn-outline-secondary"}) %>
                                 </div>
                                 </div>
                             </div>

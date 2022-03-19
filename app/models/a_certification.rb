@@ -4,5 +4,5 @@ class ACertification < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :user
+  has_many :a_tasks
 end

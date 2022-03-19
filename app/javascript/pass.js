@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const b_passed_card = `
   <div class="card text-white bg-primary mb-3 mt-3" style="max-width:100%;">
   <div class="card-body">
-    <h5 class="card-title">C認定項目達成です！おめでとうございます！</h5>
+    <h5 class="card-title">B認定項目達成です！おめでとうございます！</h5>
     <p class="card-text">上記のB認定ステータスが取得済になっていない場合はプルダウンから取得済へ変更し、完了ボタンを押下して下さい</p>
   </div>
 </div>`;
@@ -323,7 +323,7 @@ function count_7 (){
   <div class="card text-white bg-primary mb-3" style="max-width:100%;">
   <div class="card-body">
     <h5 class="card-title">B認定項目達成です！おめでとうございます！</h5>
-    <p class="card-text">上記のC認定ステータスを取得済へ変更し、完了ボタンを押下して下さい</p>
+    <p class="card-text">上記のB認定ステータスを取得済へ変更し、完了ボタンを押下して下さい</p>
   </div>
 </div>`;
 
@@ -409,3 +409,121 @@ function count_7 (){
   };
 
 window.addEventListener('load', count_7);
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const self_assessment  = document.getElementById("self_assessment");
+  const self_assessment_2  = document.getElementById("self_assessment_2");
+  const self_assessment_3  = document.getElementById("self_assessment_3");
+
+  const countVal = self_assessment.value
+  const countVal_2 = self_assessment_2.value
+  const countVal_3 = self_assessment_3.value
+
+
+  const a_passed_card = `
+  <div class="card text-white bg-danger mb-3 mt-3" style="max-width:100%;">
+  <div class="card-body">
+    <h5 class="card-title">A認定項目達成です！おめでとうございます！</h5>
+    <p class="card-text">上記のA認定ステータスが取得済になっていない場合はプルダウンから取得済へ変更し、完了ボタンを押下して下さい</p>
+  </div>
+</div>`;
+
+  const passNum  = document.getElementById("a_passed");
+  if (countVal > 69  && countVal_2 > 69 && countVal_3 > 69 ) {
+    passNum.innerHTML = (a_passed_card); }
+      else {
+        passNum.innerHTML = (``)} 
+});
+
+function count_8 (){
+  const self_assessment    = document.getElementById("self_assessment");
+  const self_assessment_2  = document.getElementById("self_assessment_2");
+  const self_assessment_3  = document.getElementById("self_assessment_3");
+
+
+  const a_passed_card = `
+  <div class="card text-white bg-danger mb-3" style="max-width:100%;">
+  <div class="card-body">
+    <h5 class="card-title">A認定項目達成です！おめでとうございます！</h5>
+    <p class="card-text">上記のA認定ステータスを取得済へ変更し、完了ボタンを押下して下さい</p>
+  </div>
+</div>`;
+
+
+  self_assessment.addEventListener("keyup", () => {
+  
+    const countVal = self_assessment.value
+  
+    const countVal_2 = self_assessment_2.value
+    const countVal_3 = self_assessment_3.value
+
+
+    const passNum  = document.getElementById("a_passed");
+    if (countVal > 69  && countVal_2 > 69 && countVal_3 > 69 ) {
+      passNum.innerHTML = ( a_passed_card ); }
+      else {
+        passNum.innerHTML = (``)} 
+  });
+
+
+  self_assessment_2.addEventListener("keyup", () => {
+  
+    const countVal = self_assessment.value
+    const countVal_2 = self_assessment_2.value
+    const countVal_3 = self_assessment_3.value
+
+
+    const passNum  = document.getElementById("a_passed");
+    if (countVal > 69  && countVal_2 > 69 && countVal_3 > 69) {
+      passNum.innerHTML = (a_passed_card); }
+      else {
+        passNum.innerHTML = (``)} 
+  });
+
+  self_assessment_3.addEventListener("keyup", () => {
+  
+    const countVal = self_assessment.value
+  
+    const countVal_2 = self_assessment_2.value
+    const countVal_3 = self_assessment_3.value
+
+
+    const passNum  = document.getElementById("a_passed");
+    if (countVal > 69  && countVal_2 > 69 && countVal_3 > 69 ) {
+      passNum.innerHTML = (a_passed_card); }
+      else {
+        passNum.innerHTML = (``)} 
+  });
+
+
+  self_assessment_4.addEventListener("keyup", () => {
+  
+    const countVal = self_assessment.value
+    const countVal_2 = self_assessment_2.value
+    const countVal_3 = self_assessment_3.value
+
+
+    const passNum  = document.getElementById("a_passed");
+    if (countVal > 69  && countVal_2 > 69 && countVal_3 > 69) {
+      passNum.innerHTML = (a_passed_card); }
+      else {
+        passNum.innerHTML = (``)} 
+  });
+
+  self_assessment_5.addEventListener("keyup", () => {
+  
+    const countVal = self_assessment.value
+    const countVal_2 = self_assessment_2.value
+    const countVal_3 = self_assessment_3.value
+
+    const passNum  = document.getElementById("a_passed");
+    if (countVal > 69  && countVal_2 > 69 && countVal_3 > 69) {
+      passNum.innerHTML = (a_passed_card); }
+      else {
+        passNum.innerHTML = (``)} 
+  });
+  };
+
+window.addEventListener('load', count_8);

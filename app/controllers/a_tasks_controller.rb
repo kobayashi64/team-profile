@@ -1,37 +1,36 @@
 class ATasksController < ApplicationController
-  before_action :move_to_signed_in
+  before_action :move_to_signed_in, only: [:edit, :new]
+  before_action :set_a_task, only: [:show, :edit, :update]
 
   def index
     @user = User.all
-    @c_task = CTask.all
-    @c_tasks = CTask.where(user_id: current_user.id).includes(:user).order('created_at DESC')
+    @a_task = ATask.all
+    @a_tasks = ATask.where(user_id: current_user.id).includes(:user).order('created_at DESC') if user_signed_in?
   end
 
   def show
-    @c_task = CTask.find(params[:id])
   end
 
   def edit
-    @c_task = CTask.find(params[:id])
+    redirect_to root_path unless @a_task.user_id == current_user.id
   end
 
   def new
-    @c_task = CTask.new
+    @a_task = ATask.new
   end
 
   def update
-    @c_task = CTask.find(params[:id])
-    if @c_task.update(c_task_params)
-      redirect_to c_task_path(@c_task.id)
+    if @a_task.update(a_task_params)
+      redirect_to a_task_path(@a_task.id)
     else
       render :edit
     end
   end
 
   def create
-    @c_task = CTask.new(c_task_params)
-    if @c_task.save
-      redirect_to c_task_path(@c_task.id)
+    @a_task = ATask.new(a_task_params)
+    if @a_task.save
+      redirect_to a_task_path(@a_task.id)
     else
       render :new
     end
@@ -39,13 +38,16 @@ class ATasksController < ApplicationController
 
   private
 
-  def c_task_params
-    params.require(:c_task).permit(:card_lending, :get_log, :surveillance_monitor, :check_the_log,
-                                   :job_confirmation).merge(user_id: current_user.id)
+  def a_task_params
+    params.require(:a_task).permit(:operation_handover_material, :incident_handover_material, :failure_flow,
+                                   :a_certification_id).merge(user_id: current_user.id)
   end
 
   def move_to_signed_in
     redirect_to user_session_path unless user_signed_in?
   end
-  
+
+  def set_a_task
+    @a_task = ATask.find(params[:id])
+  end
 end
