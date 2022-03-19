@@ -1,4 +1,6 @@
-<div class="sb-nav-fixed">
+            <div id="layoutSidenav_content">
+                <main>
+       <div class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <%= link_to("Team Profilers", root_path, {class: "navbar-brand ps-3"}) %>
@@ -48,9 +50,13 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
+                        <% unless user_signed_in?%>
                         <%= link_to("New account", new_user_registration_path, {class: 'nav-link'}) %>
+                        <%= link_to("Login", new_user_session_path, {class: 'nav-link'}) %>
+                        <% else %>
                         <%= link_to("Edit account", edit_user_registration_path, {class: 'nav-link'}) %>
                         <%= link_to('Logout', destroy_user_session_path, {method: :delete, class: 'nav-link'}) %>
+                        <% end %>
                                 </nav>
                             </div>
 
@@ -67,3 +73,5 @@
 
                 </nav>
             </div>
+
+     

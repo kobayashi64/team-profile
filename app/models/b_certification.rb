@@ -4,5 +4,5 @@ class BCertification < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :user
+  has_many :b_tasks
 end

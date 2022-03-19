@@ -4,73 +4,89 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">教育タスク一覧</h1>
                         <ol class="breadcrumb mb-4">
+                         <% if user_signed_in? %>
                          <li class="breadcrumb-item active"><%= "#{current_user.name}さんがログイン中です" %></li>
+                         <% else %>
+                         <li><%= link_to("Click here to log in", new_user_session_path, {class: "breadcrumb-item active"}) %></li>
+                         <% end %>
                         </ol>
 
                        
-                        <div class="p-3 mb-2 bg-dark text-white ">C認定教育項目一覧
-                         <% if  current_user.id == @c_task.user_id %>
-                        <%= link_to('編集', edit_c_task_path(@c_task.id), {class: "btn btn-sm btn-outline-secondary text-white m-0 p-10"}) %>
+                        <div class="p-3 mb-2 bg-dark text-white "><%= "#{@b_task.user.name}さんのB認定教育項目一覧*自己評価0~100で入力 全項目が70以上でB認定取得" %><br>
+                        <% if user_signed_in? %>
+                         <% if  current_user.id == @b_task.user_id %>
+                        <%= link_to('B認定編集', edit_b_task_path(@b_task.id), {class: "btn btn-sm btn-outline-secondary text-white mt-3 p-10"}) %>
                         <% end %>
-                        <br>*自己評価0~100で入力 全項目が70以上でC認定取得
+                        <% end %>
+                        <%= link_to("一覧画面へ戻る", b_tasks_path, {class: "btn btn-sm btn-outline-secondary text-white mt-3 p-10"}) %> 
+                        <br>
                         </div>
                        
 
-                         <% if @c_task.user.c_certification_id == 3 %> 
+                         <% if @b_task.b_certification_id == 3 %> 
 <div class="card mb-3" style="max-width: 100%;">
   <div class="row g-0">
     <div class="col-md-4">
-       <%= image_tag 'c_icon.png',class:"img-fluid" %>
+       <%= image_tag 'b_icon.png',class:"img-fluid" %>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title"><%= @c_task.user.name %>様　C認定取得</h5>
-        <p class="card-text"><br>C認定取得おめでとうございます！次はB認定取得に向けて取り組んでいきましょう！
+        <h5 class="card-title"><%= @b_task.user.name %>様　B認定取得</h5>
+        <p class="card-text"><br>B認定取得おめでとうございます！次はA認定取得に向けて取り組んでいきましょう！
         </p>
         
       </div>
     </div>
   </div>
 </div>
-
-
                             <% end %>
                         
 
     
     <div class="container">
      <div class="row">
-      <div class="col-12 mb-3 ">
+      
 
  <tbody>
+  <div class="col-2 mb-3 ">
+                        <div class="card mb-6 shadow-sm">
+                            <div class="bd-placeholder-img card-img-top ">
+                            <%= image_tag @b_task.user.image,  class: "img-fluid"%>
+                            </div>
+                            </div>
+                            </div>
+
+<div class="col-10 mb-3 ">
   <table class="mytable mb-3">
 
-    <th>C認定</th>
-   <th>定時起動JOBの確認</th>
-   <th>監視ログ定点確認</th>
-   <th>監視画面の正常性確認</th>
-   <th>業務ログ取得</th>
-   <th>セキュリティカードの貸出</th>
+    <th>名前</th>
+    <th>B認定</th>
+  <th>お客様向け送信データの手動JOB実行</th>
+   <th>〇〇データ媒体送信作業</th>
+   <th>〇〇ステータス変更作業認</th>
+   <th>アラーム発生時の正常性確認</th>
+   <th>疎通不可発生時のお客様連絡</th>
   </tr>
   <tr>
-    <td><%= @c_task.user.c_certification.name %></td>
-    <td><%= @c_task.job_confirmation %></td>
-    <td><%= @c_task.check_the_log %></td>
-    <td><%= @c_task.surveillance_monitor %></td>
-    <td><%= @c_task.get_log %></td>
-    <td><%= @c_task.card_lending %></td>
+    <td><%= @b_task.user.name %></td>
+    <td><%= @b_task.b_certification.name %></td>
+    <td><%= @b_task.job_start %></td>
+    <td><%= @b_task.sending_media %></td>
+    <td><%= @b_task.status_change %></td>
+    <td><%= @b_task.alarm_support %></td>
+    <td><%= @b_task.failure_contact %></td>
   </tr>
 </table>
 </tbody>
-
-
+</div>
+</div>
       
       
-<div class="card" >
-<div class="col-10 mb-3 d-flex">
+<div class="card mb-3" >
+<div class="col-10 d-flex">
   <div class="card-body">
    <div class="document"> 
-    <h5 class="card-title">定時起動ジョブの確認</h5>
+    <h5 class="card-title">お客様向け送信データの手動JOB実行</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
@@ -78,12 +94,12 @@
  <div class="assessment ">
      <div class="col-12  mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
-    <div class="input-default", id="self_assessment" ><%= @c_task.job_confirmation %></div>
+    <div class="input-default", id="self_assessment" ><%= @b_task.job_start %></div>
   </div>
   </div>
   </div>
 </div>
-</div>
+
 
 
 <div class="col-12 mb-3 ">
@@ -91,7 +107,7 @@
 <div class="col-10 mb-3 d-flex">
   <div class="card-body">
    <div class="document">
-    <h5 class="card-title">定例業務ログ取得</h5>
+    <h5 class="card-title">〇〇データ媒体送信作業</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
@@ -99,7 +115,7 @@
  <div class="assessment d-flex">
      <div class="col-sm-12mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
-    <div class="input-default", id="self_assessment_2" ><%= @c_task.get_log %></div>
+    <div class="input-default", id="self_assessment_2" ><%= @b_task.sending_media %></div>
   </div>
  
   </div>
@@ -112,7 +128,7 @@
 <div class="col-10 mb-3 d-flex">
   <div class="card-body">
    <div class="document">
-    <h5 class="card-title">監視画面の正常性確認</h5>
+    <h5 class="card-title">〇〇ステータス変更作業</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
@@ -120,7 +136,7 @@
 <div class="assessment d-flex">
      <div class="col-sm-12 mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
-    <div class="input-default", id="self_assessment_3" ><%=  @c_task.surveillance_monitor %></div>
+    <div class="input-default", id="self_assessment_3" ><%=  @b_task.status_change %></div>
   </div>
 
   
@@ -134,7 +150,7 @@
 <div class="col-10 mb-3 d-flex">
   <div class="card-body">
    <div class="document">
-    <h5 class="card-title">監視ログ定点確認</h5>
+    <h5 class="card-title">アラーム発生時の正常性確認</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
@@ -142,7 +158,7 @@
  <div class="bbb d-flex">
      <div class="col-sm-12 mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
-    <div class="input-default", id="self_assessment_4" ><%=  @c_task.check_the_log %></div>
+    <div class="input-default", id="self_assessment_4" ><%=  @b_task.alarm_support %></div>
   </div>
 
   </div>
@@ -155,7 +171,7 @@
 <div class="col-10 mb-3 d-flex">
   <div class="card-body">
    <div class="document">
-    <h5 class="card-title">セキュリティカードの貸出</h5>
+    <h5 class="card-title">疎通不可発生時のお客様連絡</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
@@ -163,7 +179,7 @@
 <div class="assessment d-flex">
      <div class="col-sm-12 mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
-      <div class="input-default", id="self_assessment_5" ><%=  @c_task.card_lending %></div>
+      <div class="input-default", id="self_assessment_5" ><%=  @b_task.failure_contact %></div>
   </div>
 
 </div>
@@ -184,25 +200,6 @@
 </div>
 </div>
 
-
-
-
-
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        
-   
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</main>
+<%= render "shared/footer" %>
       

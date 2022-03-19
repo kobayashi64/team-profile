@@ -8,6 +8,7 @@
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">プロフィール情報編集画面</h3></div>
+                                    <%= render 'layouts/error_messages', model:f.object %>
                                     <div class="card-body">
                                         <form>
                                         <div class="row mb-3">
@@ -101,29 +102,6 @@
                                                 </div>
                                                 </div>
 
-
-                                                <div class="row mb-3 mt-3">
-                                                <div class="col-md-2">
-                                                <label for="inputName">A認定</label>
-                                                    <div class="input-birth-wrap mb-3 mb-md-0 d-flex">
-                                                <%= f.collection_select(:a_certification_id, ACertification.all, :id, :name, {}, {class:"select-box", id:"a_certification"}) %>
-                                                </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                <label for="inputName">B認定</label>
-                                                    <div class="input-birth-wrap mb-3 mb-md-0 d-flex">
-                                                <%= f.collection_select(:b_certification_id, BCertification.all, :id, :name, {}, {class:"select-box", id:"b_certification"}) %>
-                                                </div>
-                                                </div>
-
-                                                <div class="col-md-2">
-                                                <label for="inputName">C認定</label>
-                                                    <div class="input-birth-wrap mb-3 mb-md-0 d-flex">
-                                                <%= f.collection_select(:c_certification_id, CCertification.all, :id, :name, {}, {class:"select-box", id:"c_certification"}) %>
-                                                </div>
-                                                </div>
-                                                 </div>
-
                                             <div class="col-md-12 mt-3 ">
                                                 <%= f.submit "Edit Account" ,class:"register-red-btn" %>
                                             </div>
@@ -143,12 +121,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
+                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
                         </div>
                     </div>
                 </footer>

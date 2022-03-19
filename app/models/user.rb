@@ -9,12 +9,12 @@ class User < ApplicationRecord
   has_one :b_task
   has_one :c_task
 
-  validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
+  with_options presence: true do
+    validates :name
+    validates :image
+  end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
   belongs_to :group
-  belongs_to :c_certification
-  belongs_to :b_certification
-  belongs_to :a_certification
 end

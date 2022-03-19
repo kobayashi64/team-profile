@@ -171,9 +171,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const c_passed_card = `
   <div class="card text-white bg-warning mb-3 mt-3" style="max-width:100%;">
   <div class="card-body">
-  
     <h5 class="card-title">C認定項目達成です！おめでとうございます！</h5>
-    <p class="card-text">編集完了ボタンを押下し、マイページ(Edit account)からC認定ステータスを変更して下さい</p>
+    <p class="card-text">上記のC認定ステータスが取得済になっていない場合はプルダウンから取得済へ変更し、完了ボタンを押下して下さい</p>
   </div>
 </div>`;
 
@@ -195,7 +194,7 @@ function count_6 (){
   <div class="card text-white bg-warning mb-3" style="max-width:100%;">
   <div class="card-body">
     <h5 class="card-title">C認定項目達成です！おめでとうございます！</h5>
-    <p class="card-text">編集完了ボタンを押下後、マイページ(Edit account)からC認定ステータスを取得済へ変更して下さい</p>
+    <p class="card-text">上記のC認定ステータスを取得済へ変更し、完了ボタンを押下して下さい</p>
   </div>
 </div>`;
 
@@ -281,3 +280,132 @@ function count_6 (){
   };
 
 window.addEventListener('load', count_6);
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const self_assessment  = document.getElementById("self_assessment");
+  const self_assessment_2  = document.getElementById("self_assessment_2");
+  const self_assessment_3  = document.getElementById("self_assessment_3");
+  const self_assessment_4  = document.getElementById("self_assessment_4");
+  const self_assessment_5  = document.getElementById("self_assessment_5");
+
+  const countVal = self_assessment.value
+  const countVal_2 = self_assessment_2.value
+  const countVal_3 = self_assessment_3.value
+  const countVal_4 = self_assessment_4.value
+  const countVal_5 = self_assessment_5.value
+
+
+  const b_passed_card = `
+  <div class="card text-white bg-primary mb-3 mt-3" style="max-width:100%;">
+  <div class="card-body">
+    <h5 class="card-title">C認定項目達成です！おめでとうございます！</h5>
+    <p class="card-text">上記のB認定ステータスが取得済になっていない場合はプルダウンから取得済へ変更し、完了ボタンを押下して下さい</p>
+  </div>
+</div>`;
+
+  const passNum  = document.getElementById("b_passed");
+  if (countVal > 69  && countVal_2 > 69 && countVal_3 > 69 && countVal_4 > 69 && countVal_5 > 69) {
+    passNum.innerHTML = (b_passed_card); }
+      else {
+        passNum.innerHTML = (``)} 
+});
+
+function count_7 (){
+  const self_assessment    = document.getElementById("self_assessment");
+  const self_assessment_2  = document.getElementById("self_assessment_2");
+  const self_assessment_3  = document.getElementById("self_assessment_3");
+  const self_assessment_4  = document.getElementById("self_assessment_4");
+  const self_assessment_5  = document.getElementById("self_assessment_5");
+
+  const b_passed_card = `
+  <div class="card text-white bg-primary mb-3" style="max-width:100%;">
+  <div class="card-body">
+    <h5 class="card-title">B認定項目達成です！おめでとうございます！</h5>
+    <p class="card-text">上記のC認定ステータスを取得済へ変更し、完了ボタンを押下して下さい</p>
+  </div>
+</div>`;
+
+
+  self_assessment.addEventListener("keyup", () => {
+  
+    const countVal = self_assessment.value
+  
+    const countVal_2 = self_assessment_2.value
+    const countVal_3 = self_assessment_3.value
+    const countVal_4 = self_assessment_4.value
+    const countVal_5 = self_assessment_5.value
+
+    const passNum  = document.getElementById("b_passed");
+    if (countVal > 69  && countVal_2 > 69 && countVal_3 > 69 && countVal_4 > 69 && countVal_5 > 69) {
+      passNum.innerHTML = ( b_passed_card ); }
+      else {
+        passNum.innerHTML = (``)} 
+  });
+
+
+  self_assessment_2.addEventListener("keyup", () => {
+  
+    const countVal = self_assessment.value
+    const countVal_2 = self_assessment_2.value
+    const countVal_3 = self_assessment_3.value
+    const countVal_4 = self_assessment_4.value
+    const countVal_5 = self_assessment_5.value
+
+    const passNum  = document.getElementById("b_passed");
+    if (countVal > 69  && countVal_2 > 69 && countVal_3 > 69 && countVal_4 > 69 && countVal_5 > 69) {
+      passNum.innerHTML = (b_passed_card); }
+      else {
+        passNum.innerHTML = (``)} 
+  });
+
+  self_assessment_3.addEventListener("keyup", () => {
+  
+    const countVal = self_assessment.value
+  
+    const countVal_2 = self_assessment_2.value
+    const countVal_3 = self_assessment_3.value
+    const countVal_4 = self_assessment_4.value
+    const countVal_5 = self_assessment_5.value
+
+    const passNum  = document.getElementById("b_passed");
+    if (countVal > 69  && countVal_2 > 69 && countVal_3 > 69 && countVal_4 > 69 && countVal_5 > 69) {
+      passNum.innerHTML = (b_passed_card); }
+      else {
+        passNum.innerHTML = (``)} 
+  });
+
+
+  self_assessment_4.addEventListener("keyup", () => {
+  
+    const countVal = self_assessment.value
+    const countVal_2 = self_assessment_2.value
+    const countVal_3 = self_assessment_3.value
+    const countVal_4 = self_assessment_4.value
+    const countVal_5 = self_assessment_5.value
+
+    const passNum  = document.getElementById("b_passed");
+    if (countVal > 69  && countVal_2 > 69 && countVal_3 > 69 && countVal_4 > 69 && countVal_5 > 69) {
+      passNum.innerHTML = (b_passed_card); }
+      else {
+        passNum.innerHTML = (``)} 
+  });
+
+  self_assessment_5.addEventListener("keyup", () => {
+  
+    const countVal = self_assessment.value
+    const countVal_2 = self_assessment_2.value
+    const countVal_3 = self_assessment_3.value
+    const countVal_4 = self_assessment_4.value
+    const countVal_5 = self_assessment_5.value
+
+    const passNum  = document.getElementById("b_passed");
+    if (countVal > 69  && countVal_2 > 69 && countVal_3 > 69 && countVal_4 > 69 && countVal_5 > 69) {
+      passNum.innerHTML = (b_passed_card); }
+      else {
+        passNum.innerHTML = (``)} 
+  });
+  };
+
+window.addEventListener('load', count_7);
