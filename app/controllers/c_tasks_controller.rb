@@ -1,19 +1,18 @@
 class CTasksController < ApplicationController
-  before_action :move_to_signed_in
-
+  before_action :move_to_signed_in, only: [:edit, :new]
+  before_action :set_c_task, only: [:show, :edit, :update]
 
   def index
     @user = User.all
     @c_task = CTask.all
-    @c_tasks = CTask.where(user_id: current_user.id).includes(:user).order('created_at DESC')
+    @c_tasks = CTask.where(user_id: current_user.id).includes(:user).order('created_at DESC') if user_signed_in?
   end
 
   def show
-    @c_task = CTask.find(params[:id])
   end
 
   def edit
-    @c_task = CTask.find(params[:id])
+    redirect_to root_path unless @c_task.user_id == current_user.id
   end
 
   def new
@@ -21,7 +20,6 @@ class CTasksController < ApplicationController
   end
 
   def update
-    @c_task = CTask.find(params[:id])
     if @c_task.update(c_task_params)
       redirect_to c_task_path(@c_task.id)
     else
@@ -42,11 +40,14 @@ class CTasksController < ApplicationController
 
   def c_task_params
     params.require(:c_task).permit(:card_lending, :get_log, :surveillance_monitor, :check_the_log,
-                                   :job_confirmation).merge(user_id: current_user.id)
+                                   :job_confirmation, :c_certification_id).merge(user_id: current_user.id)
   end
 
   def move_to_signed_in
     redirect_to user_session_path unless user_signed_in?
   end
 
+  def set_c_task
+    @c_task = CTask.find(params[:id])
+  end
 end

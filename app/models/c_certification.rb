@@ -4,5 +4,5 @@ class CCertification < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :user
+  has_many :c_tasks
 end
