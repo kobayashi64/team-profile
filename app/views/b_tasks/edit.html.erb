@@ -9,9 +9,9 @@
                          <li class="breadcrumb-item active"><%= "#{current_user.name}さんがログイン中です" %></li>                     
                         </ol>
 
-                        <div class="p-3 mb-2 bg-dark text-white"><%= "#{current_user.name}さんのC認定一覧 *自己評価0~100で入力 全項目が70以上でC認定取得" %> <br> 
-                        <%= link_to('詳細ページへ', c_task_path(@c_task.id), {class: "btn btn-sm btn-outline-secondary text-white mt-3 p-10"}) %>
-                        <%= link_to("一覧画面へ戻る", c_tasks_path, {class: "btn btn-sm btn-outline-secondary text-white mt-3 p-10"}) %> </div>
+                        <div class="p-3 mb-2 bg-dark text-white"><%= "#{current_user.name}さんのB認定一覧 *自己評価0~100で入力 全項目が70以上でC認定取得" %> <br> 
+                        <%= link_to('詳細ページへ', b_task_path(@b_task.id), {class: "btn btn-sm btn-outline-secondary text-white mt-3 p-10"}) %>
+                        <%= link_to("一覧画面へ戻る", b_tasks_path, {class: "btn btn-sm btn-outline-secondary text-white mt-3 p-10"}) %> </div>
  
  <div class="container">
      <div class="row">
@@ -20,19 +20,27 @@
      <div class="card-body">
     <table id="fav-table" class="table table-bordered">
   <thead>
-      <tr><th>名前</th><th>C認定取得</th><th>定時起動JOBの確認</th><th>監視ログ定点確認</th><th>監視画面の正常性確認</th><th>業務ログ取得</th><th>セキュリティカードの貸出</th></tr>
+      <tr>
+    <th>名前</th>
+    <th>B認定</th>
+  <th>お客様向け送信データの手動JOB実行</th>
+   <th>〇〇データ媒体送信作業</th>
+   <th>〇〇ステータス変更作業認</th>
+   <th>アラーム発生時の正常性確認</th>
+   <th>疎通不可発生時のお客様連絡</th>
+  </tr>
   </thead>
   <tbody>
   
-      <tr>
-      <td><%= @c_task.user.name %></td>
-      <td><%= @c_task.c_certification.name %></td>
-      <td><%= @c_task.job_confirmation %></td>
-      <td><%= @c_task.check_the_log %></td>
-      <td><%= @c_task.surveillance_monitor %></td>
-      <td><%= @c_task.get_log %></td>
-      <td><%= @c_task.card_lending %></td>
-      </tr>
+     <tr>
+    <td><%= @b_task.user.name %></td>
+    <td><%= @b_task.b_certification.name %></td>
+    <td><%= @b_task.job_start %></td>
+    <td><%= @b_task.sending_media %></td>
+    <td><%= @b_task.status_change %></td>
+    <td><%= @b_task.alarm_support %></td>
+    <td><%= @b_task.failure_contact %></td>
+  </tr>
    
   </tbody>
 </table>
@@ -41,9 +49,8 @@
 </div>
 </div>
                    
-<%= form_with model: @c_task, local: true do |f| %>
+<%= form_with model: @b_task, local: true do |f| %>
 <%= render 'layouts/error_messages', model:f.object %>
- 
     <div class="container">
      <div class="row">
       <div class="col-12 mb-3 ">
@@ -51,7 +58,7 @@
 <div class="col-12 mb-3 d-flex">
   <div class="card-body">
    <div class="aaa">
-    <h5 class="card-title">定時起動ジョブの確認</h5>
+    <h5 class="card-title">お客様向け送信データの手動JOB実行</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
@@ -59,7 +66,7 @@
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
-    <%= f.text_area :job_confirmation, class:"input-default", id:"self_assessment", placeholder:"半角数字で入力してください",maxlength:"3" %>
+    <%= f.text_area :job_start, class:"input-default", id:"self_assessment", placeholder:"半角数字で入力してください",maxlength:"3" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -78,7 +85,7 @@
 <div class="col-12 mb-3 d-flex">
   <div class="card-body">
    <div class="aaa">
-    <h5 class="card-title">定例業務ログ取得</h5>
+    <h5 class="card-title">〇〇データ媒体送信作業</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
@@ -86,7 +93,7 @@
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
-    <%= f.text_area :get_log, class:"input-default", id:"self_assessment_2", placeholder:"半角数字で入力してください",maxlength:"3" %>
+    <%= f.text_area :sending_media, class:"input-default", id:"self_assessment_2", placeholder:"半角数字で入力してください",maxlength:"3" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -104,7 +111,7 @@
 <div class="col-12 mb-3 d-flex">
   <div class="card-body">
    <div class="aaa">
-    <h5 class="card-title">監視画面の正常性確認</h5>
+    <h5 class="card-title">〇〇ステータス変更作業</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
@@ -112,7 +119,7 @@
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
-    <%= f.text_area :surveillance_monitor, class:"input-default", id:"self_assessment_3", placeholder:"半角数字で入力してください",maxlength:"3" %>
+    <%= f.text_area :status_change, class:"input-default", id:"self_assessment_3", placeholder:"半角数字で入力してください",maxlength:"3" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -130,7 +137,7 @@
 <div class="col-12 mb-3 d-flex">
   <div class="card-body">
    <div class="aaa">
-    <h5 class="card-title">監視ログ定点確認</h5>
+    <h5 class="card-title">アラーム発生時の正常性確認</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
@@ -138,7 +145,7 @@
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
-    <%= f.text_area :check_the_log, class:"input-default", id:"self_assessment_4", placeholder:"半角数字で入力してください",maxlength:"3" %>
+    <%= f.text_area :alarm_support, class:"input-default", id:"self_assessment_4", placeholder:"半角数字で入力してください",maxlength:"3" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -156,7 +163,7 @@
 <div class="col-12 mb-3 d-flex">
   <div class="card-body">
    <div class="aaa">
-    <h5 class="card-title">セキュリティカードの貸出</h5>
+    <h5 class="card-title">疎通不可発生時のお客様連絡</h5>
     <p class="card-text">運用手順書 *** 手順書格納先 ***</p>
  </div>
 </div>
@@ -164,7 +171,7 @@
  <div class="bbb d-flex">
      <div class="col-sm-6 mt-2">
     <label for="inputName">自己評価(0~100の評価で入力)</label>
-    <%= f.text_area :card_lending, class:"input-default", id:"self_assessment_5", placeholder:"半角数字で入力してください",maxlength:"3" %>
+    <%= f.text_area :failure_contact, class:"input-default", id:"self_assessment_5", placeholder:"半角数字で入力してください",maxlength:"3" %>
   </div>
    <div class="col-sm-2 mt-2 ms-4">
       <div class="pass-content">
@@ -180,15 +187,16 @@
 
 
 <div class="col-12 mt-3">
-<label for="inputName">C認定</label>
+<label for="inputName">B認定</label>
       <div class="same-width-list mb-3 mb-md-0 d-flex ">
-  <%= f.collection_select(:c_certification_id, CCertification.all, :id, :name, {}, {class:"select-box", id:"c_certification"}) %>
+  <%= f.collection_select(:b_certification_id, BCertification.all, :id, :name, {}, {class:"select-box", id:"b_certification"}) %>
   </div>
   </div>
 
 
-        <div class="c_passed mt-3" id='c_passed'>
+        <div class="b_passed mt-3" id='b_passed'>
         </div>
+
 
 <%= f.submit "編集完了" ,class:"register-blue-btn mt-3" %>
 <% end %>

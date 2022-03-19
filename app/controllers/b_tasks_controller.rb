@@ -51,5 +51,3 @@ class BTasksController < ApplicationController
     @b_task = BTask.find(params[:id])
   end
 end
-
-  

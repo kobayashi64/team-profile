@@ -6,10 +6,9 @@ class CTask < ApplicationRecord
     validates :surveillance_monitor
     validates :check_the_log
     validates :job_confirmation
-    validates :user_id
+    validates :user_id, uniqueness: true
   end
 
-  validates :user_id, uniqueness: true
   belongs_to :user
 
   extend ActiveHash::Associations::ActiveRecordExtensions

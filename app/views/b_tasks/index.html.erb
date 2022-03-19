@@ -38,25 +38,35 @@ $(document).ready(function() {
                         </ol>
 
 
-                        <div class="p-3 mb-2 bg-dark text-white">B認定一覧　*項目一覧へ自己評価0~100で入力 全項目が70以上でB認定取得</div>
-                        
+                        <div class="p-3 mb-2 bg-dark text-white">B認定一覧　*項目一覧へ自己評価0~100で入力 全項目が70以上でB認定取得<br>
+                        </div>
+ 
+<div class="row d-flex">
+                                    <div class="col-6">
+                                <div class="card bg-danger mb-3">
+                                  
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <%= link_to('A認定一覧はこちら', a_tasks_path, {class: "small text-white stretched-link"}) %>
+                                        <div class="small text-black"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <div class="col-6">
+                                <div class="card bg-warning mb-3">
+                                  
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <%= link_to('C認定一覧はこちら', c_tasks_path, {class: "small text-white stretched-link"}) %>
+                                        <div class="small text-black"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
 
        <div class="container">
                      <div class="row d-flex">
                      <% if user_signed_in?%>
                       <% @b_tasks.each do |b_task| %>
-                        <% if @c_tasks.present? %>
-                            <div class="col-12">
-                                <div class="card bg-light text- black mb-4">
-                                  
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <%= link_to('B認定編集はこちら', edit_b_task_path(b_task.id), {class: "small text-black stretched-link"}) %>
-                                        <div class="small text-black"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                 <% end %>
 
                          <div class="col-lg-2 col-4 mb-3 ">
                         <div class="card mb-6 shadow-sm">
@@ -65,6 +75,8 @@ $(document).ready(function() {
                                                         <div class="card-body">
                                
                                  <%= link_to('B認定詳細', b_task_path(b_task.id), {class: "btn btn-sm btn-outline-secondary"}) %>
+
+                                 <%= link_to('編集', edit_b_task_path(b_task.id), {class: "btn btn-sm btn-outline-secondary"}) %>
                                  
                                 </div>
                                 </div>
@@ -93,7 +105,7 @@ $(document).ready(function() {
            <tbody>
   <table class="mytable mb-3">
 
-    <h5><%= "#{b_task.user.name}さんのC認定項目一覧" %></h5>
+    <h5><%= "#{b_task.user.name}さんのB認定項目一覧" %></h5>
    <th>お客様向け送信データの手動JOB実行</th>
    <th>〇〇データ媒体送信作業</th>
    <th>〇〇ステータス変更作業認</th>
@@ -203,7 +215,7 @@ $(document).ready(function() {
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                 <%= link_to( 'C認定詳細', b_task_path(b_task.id), {class: "btn btn-sm btn-outline-secondary"}) %>
+                                 <%= link_to( 'B認定詳細', b_task_path(b_task.id), {class: "btn btn-sm btn-outline-secondary"}) %>
                                  
                                 </div>
                                 </div>
