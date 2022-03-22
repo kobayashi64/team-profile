@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :documents, only: [:index] 
   resources :users, only: [:index] 
   resources :a_tasks, only: [:index,:show,:new,:create,:edit,:update]
   resources :b_tasks, only: [:index,:show,:new,:create,:edit,:update]
