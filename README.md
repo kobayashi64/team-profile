@@ -1,24 +1,31 @@
-# README
+# アプリケーション名:team-profile
+## アプリケーション概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## URL
+https://team-profile-37467.herokuapp.com/
 
-* Ruby version
 
-* System dependencies
+## テスト用アカウント
 
-* Configuration
+## 利用方法
 
-* Database creation
 
-* Database initialization
+## アプリケーションを作成した背景
+私の前職の職場はデータセンタで、シフト制で24時間システムの運用監視を行う業務でした。
+現場としてシフト制かつ、コロナの影響もあり４部屋に分かれテレビ会議システムで各部屋をつなぎながら業務行っていた為、人の顔・名前が分かりにくい環境でした。
+その為、顔写真付きのプロフィールのデータベースがあれば
 
-* How to run the test suite
+## 洗い出した要件
 
-* Services (job queues, cache servers, search engines, etc.)
+## 実装した機能についての画像やGIFおよびその説明※
 
-* Deployment instructions
+## 実装予定の機能
 
-* ...
+## データベース設計
+
+## 開発環境
+
+## ローカルでの動作方法
+
+## 工夫したポイント
