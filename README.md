@@ -74,7 +74,11 @@ https://docs.google.com/spreadsheets/d/1nTE_Q00RevLgAn0hWdvWflfHLKGgShLRKQEyM-1J
 ・テキストエディタ：Visual Studio Code
 
 ## ローカルでの動作方法
-
+以下のコマンドを順に実行。
+% git clone https://github.com/kobayashi64/team-profile.git
+% cd team-profile
+% bundle install
+% yarn install
 
 ## 工夫したポイント
 Bootstrapを使用してるため、スマホ画面でも見やすいようになっています。
