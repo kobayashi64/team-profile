@@ -55,7 +55,7 @@ https://docs.google.com/spreadsheets/d/1nTE_Q00RevLgAn0hWdvWflfHLKGgShLRKQEyM-1J
 [![Image from Gyazo](https://i.gyazo.com/d70630032d512e769d700f15ed12bbf9.png)](https://gyazo.com/d70630032d512e769d700f15ed12bbf9)
 
 認定登録機能
-[![Image from Gyazo](https://i.gyazo.com/11dcb1822d51714b55da3f22236a055c.gif)](https://gyazo.com/11dcb1822d51714b55da3f22236a055c)
+[![Image from Gyazo](https://i.gyazo.com/11dcb1822d51714b55da3f22236a055c.gif)](https://gyazo.com/11dcb1822d51714b55da3f22236a055c)　　
 
 スマホ画面
 [![Image from Gyazo](https://i.gyazo.com/0fa13a7b1854c057b97aa465b4abe1c5.gif)](https://gyazo.com/0fa13a7b1854c057b97aa465b4abe1c5)
@@ -77,3 +77,6 @@ https://docs.google.com/spreadsheets/d/1nTE_Q00RevLgAn0hWdvWflfHLKGgShLRKQEyM-1J
 
 
 ## 工夫したポイント
+Bootstrapを使用してるため、スマホ画面でも見やすいようになっています。
+文字や画像のサイズを画面の大きさで可変し、ユーザ一覧画面、詳細画面などが見やすいように工夫しています。
+
