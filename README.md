@@ -57,15 +57,21 @@ https://docs.google.com/spreadsheets/d/1nTE_Q00RevLgAn0hWdvWflfHLKGgShLRKQEyM-1J
 認定登録機能
 [![Image from Gyazo](https://i.gyazo.com/11dcb1822d51714b55da3f22236a055c.gif)](https://gyazo.com/11dcb1822d51714b55da3f22236a055c)
 
+スマホ画面
+[![Image from Gyazo](https://i.gyazo.com/0fa13a7b1854c057b97aa465b4abe1c5.gif)](https://gyazo.com/0fa13a7b1854c057b97aa465b4abe1c5)
+
 
 ## 実装予定の機能
-- 採点機能つきのテスト問題作成(現状自己評価のみの評価基準のため、テストに合格したら認定が取得できるという仕組みを考えております。)
+- 採点機能つきのテスト問題作成(現状自己評価のみの評価基準のため、テストに合格したら認定が取得できるという仕組みを考えています。)
 
 ## データベース設計
 [![Image from Gyazo](https://i.gyazo.com/bba6892a8157815d97eba7926651b315.png)](https://gyazo.com/bba6892a8157815d97eba7926651b315)
 
 
 ## 開発環境
+・フロントエンド：HTML・CSS・Bootstrap・JavaScript
+・バックエンド：Ruby・Ruby on Rails
+・テキストエディタ：Visual Studio Code
 
 ## ローカルでの動作方法
 
