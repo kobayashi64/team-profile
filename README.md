@@ -5,18 +5,19 @@
 
 [２]定例業務の自己評価登録機能  
 ・業務で行う作業が一覧化されており（A、B、C認定で項目を設定済）、各項目ごとに自己評価を登録できます。  
-・A、B、C項目ごとの評価を埋めることでスキル認定（A認定、B認定、C認定）を取得することができます。  
 ・他のユーザの登録情報を参照することができ、実施可能な業務、できない業務を共有することができます。  
+・A、B、C項目ごとの評価を埋めることでスキル認定（A認定、B認定、C認定）を取得することができます。項目毎に認定を設定することで、目標や実施可能な業務がわかりやすくなリます。
+
 
 ## URL
 https://team-profile-37467.herokuapp.com/
 
 
 ## テスト用アカウント
-・Basic認証ID: admin1
-・Basic認証PASS: 1111
-・メールアドレス: test@test.com
-・パスワード: testtest1
+・Basic認証ID: admin1  
+・Basic認証PASS: 1111  
+・メールアドレス: test@test.com  
+・パスワード: testtest1  
 
 ## 利用方法
 [プロフィール登録、参照、検索機能]  
@@ -74,9 +75,10 @@ https://docs.google.com/spreadsheets/d/1nTE_Q00RevLgAn0hWdvWflfHLKGgShLRKQEyM-1J
 
 
 ## 開発環境
-・フロントエンド：HTML・CSS・Bootstrap・JavaScript
-・バックエンド：Ruby・Ruby on Rails
-・テキストエディタ：Visual Studio Code
+・フロントエンド：HTML・CSS・Bootstrap・JavaScript  
+・バックエンド：Ruby・Ruby on Rails  
+・テキストエディタ：Visual Studio Code  
+
 
 ## ローカルでの動作方法
 以下のコマンドを順に実行。  
@@ -87,5 +89,5 @@ https://docs.google.com/spreadsheets/d/1nTE_Q00RevLgAn0hWdvWflfHLKGgShLRKQEyM-1J
 
 ## 工夫したポイント
 Bootstrapを使用してるため、スマホ画面でも見やすいようになっています。
-文字や画像のサイズを画面の大きさで可変し、ユーザ一覧画面、詳細画面などが見やすいように工夫しています。
+画面の大きさで文字や画像のサイズを可変し、ユーザ一覧画面、詳細画面などが見やすいように工夫しています。
 
