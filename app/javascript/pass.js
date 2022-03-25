@@ -116,9 +116,9 @@ document.addEventListener('DOMContentLoaded', function() {
      const passNum_2  = document.getElementById("pass_2");
      if (countVal_2 < 50) {
       passNum_2.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
-    } else if (50 <= countVal && countVal < 70) {
+    } else if (50 <= countVal_2 && countVal_2 < 70) {
      passNum_2.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
-    } else if (70 <= countVal) {
+    } else if (70 <= countVal_2) {
      passNum_2.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
     }
 
@@ -126,9 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const passNum_3  = document.getElementById("pass_3");
       if (countVal_3 < 50) {
         passNum_3.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
-      } else if (50 <= countVal && countVal < 70) {
+      } else if (50 <= countVal_3 && countVal_3 < 70) {
        passNum_3.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
-      } else if (70 <= countVal) {
+      } else if (70 <= countVal_3) {
        passNum_3.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
       }
 
@@ -136,9 +136,9 @@ document.addEventListener('DOMContentLoaded', function() {
        const passNum_4  = document.getElementById("pass_4");
        if (countVal_4 < 50) {
         passNum_4.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
-      } else if (50 <= countVal && countVal < 70) {
+      } else if (50 <= countVal_4 && countVal_4 < 70) {
        passNum_4.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
-      } else if (70 <= countVal) {
+      } else if (70 <= countVal_4) {
        passNum_4.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
       }
 
@@ -146,9 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const passNum_5  = document.getElementById("pass_5");
         if (countVal_5 < 50) {
           passNum_5.innerHTML = (`<p class="text-info">がんばりましょう！</p>`) ;
-        } else if (50 <= countVal && countVal < 70) {
+        } else if (50 <= countVal_5 && countVal_5 < 70) {
          passNum_5.innerHTML = (`<p class="text-warning">惜しい！もう一息です。</p>`)
-        } else if (70 <= countVal) {
+        } else if (70 <= countVal_5) {
          passNum_5.innerHTML = (`<p class="text-danger">合格です！おめでとう！</p>`)
         }
 });
