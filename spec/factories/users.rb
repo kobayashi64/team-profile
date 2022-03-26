@@ -7,6 +7,7 @@ FactoryBot.define do
     password_confirmation { password }
     group_id	{ Faker::Number.between(from: 1, to: 5) }
     prefecture_id { Faker::Number.between(from: 1, to: 48) }
+    telephone_number { Faker::Number.number(digits: 11) }
     birthday { '1980-01-01' }
     assignment_date { '2015-04-01' }
 

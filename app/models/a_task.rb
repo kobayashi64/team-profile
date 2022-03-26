@@ -4,8 +4,12 @@ class ATask < ApplicationRecord
     validates :operation_handover_material
     validates :incident_handover_material
     validates :failure_flow
-    validates :user_id, uniqueness: true
   end
+
+  with_options presence: true do
+    validates :a_certification_id
+    validates :user_id, uniqueness: true
+    end
 
   belongs_to :user
 
