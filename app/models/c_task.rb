@@ -6,7 +6,11 @@ class CTask < ApplicationRecord
     validates :surveillance_monitor
     validates :check_the_log
     validates :job_confirmation
-    validates :user_id, uniqueness: true
+  end
+
+  with_options presence: true do
+  validates :c_certification_id
+  validates :user_id, uniqueness: true
   end
 
   belongs_to :user

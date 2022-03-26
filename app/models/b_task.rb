@@ -6,8 +6,13 @@ class BTask < ApplicationRecord
     validates :status_change
     validates :alarm_support
     validates :failure_contact
-    validates :user_id, uniqueness: true
   end
+
+  with_options presence: true do
+    validates :b_certification_id
+    validates :user_id, uniqueness: true
+    end
+
 
   belongs_to :user
 

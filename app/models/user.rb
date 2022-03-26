@@ -12,6 +12,10 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :image
+    validates :birthday
+    validates :assignment_date
+    validates :group_id
+    validates :prefecture_id
   end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
