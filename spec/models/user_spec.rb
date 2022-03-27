@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  
   before do
     @user = FactoryBot.build(:user)
   end
@@ -21,7 +20,6 @@ RSpec.describe User, type: :model do
         @user.telephone_number = ''
         expect(@user).to be_valid
       end
-
     end
 
     context '新規登録できない場合' do
@@ -48,7 +46,7 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Prefecture can't be blank")
       end
-      
+
       it 'group_idが空では登録できない' do
         @user.group_id = ''
         @user.valid?
@@ -61,7 +59,6 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Birthday can't be blank")
       end
 
-      
       it 'assignment_dateが空では登録できない' do
         @user.assignment_date = ''
         @user.valid?
@@ -101,7 +98,5 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include('Email is invalid')
       end
     end
-
-
-end
+  end
 end

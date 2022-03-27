@@ -16,34 +16,33 @@ RSpec.describe BTask, type: :model do
       it 'failure_contactの値が0~100出ないと登録できない' do
         @b_task.failure_contact = 101
         @b_task.valid?
-        expect(@b_task.errors.full_messages).to include("Failure contact 0~100の値で入力して下さい")
+        expect(@b_task.errors.full_messages).to include('Failure contact 0~100の値で入力して下さい')
       end
 
       it 'alarm_supportの値が0~100出ないと登録できない' do
         @b_task.alarm_support = 101
         @b_task.valid?
-        expect(@b_task.errors.full_messages).to include("Alarm support 0~100の値で入力して下さい")
+        expect(@b_task.errors.full_messages).to include('Alarm support 0~100の値で入力して下さい')
       end
 
       it 'status_changeの値が0~100出ないと登録できない' do
         @b_task.status_change = 101
         @b_task.valid?
-        expect(@b_task.errors.full_messages).to include("Status change 0~100の値で入力して下さい")
+        expect(@b_task.errors.full_messages).to include('Status change 0~100の値で入力して下さい')
       end
 
       it 'sending_mediaの値が0~100出ないと登録できない' do
         @b_task.sending_media = 101
         @b_task.valid?
-        expect(@b_task.errors.full_messages).to include("Sending media 0~100の値で入力して下さい")
+        expect(@b_task.errors.full_messages).to include('Sending media 0~100の値で入力して下さい')
       end
 
       it 'job_startの値が0~100出ないと登録できない' do
         @b_task.job_start = 101
         @b_task.valid?
-        expect(@b_task.errors.full_messages).to include("Job start 0~100の値で入力して下さい")
+        expect(@b_task.errors.full_messages).to include('Job start 0~100の値で入力して下さい')
       end
 
-      
       it 'b_certification_idが空では登録できない' do
         @b_task.b_certification_id = ''
         @b_task.valid?
@@ -62,7 +61,6 @@ RSpec.describe BTask, type: :model do
         another_user.valid?
         expect(another_user.errors.full_messages).to include('User has already been taken')
       end
-
     end
-end
+  end
 end

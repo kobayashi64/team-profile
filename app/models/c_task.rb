@@ -9,8 +9,8 @@ class CTask < ApplicationRecord
   end
 
   with_options presence: true do
-  validates :c_certification_id
-  validates :user_id, uniqueness: true
+    validates :c_certification_id
+    validates :user_id, uniqueness: true
   end
 
   belongs_to :user

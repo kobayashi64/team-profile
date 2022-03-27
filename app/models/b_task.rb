@@ -11,8 +11,7 @@ class BTask < ApplicationRecord
   with_options presence: true do
     validates :b_certification_id
     validates :user_id, uniqueness: true
-    end
-
+  end
 
   belongs_to :user
 

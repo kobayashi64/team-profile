@@ -16,22 +16,21 @@ RSpec.describe ATask, type: :model do
       it 'failure_flowの値が0~100出ないと登録できない' do
         @a_task.failure_flow = 101
         @a_task.valid?
-        expect(@a_task.errors.full_messages).to include("Failure flow 0~100の値で入力して下さい")
+        expect(@a_task.errors.full_messages).to include('Failure flow 0~100の値で入力して下さい')
       end
 
-        it 'incident_handover_materialの値が0~100出ないと登録できない' do
-          @a_task.incident_handover_material= 101
-          @a_task.valid?
-          expect(@a_task.errors.full_messages).to include("Incident handover material 0~100の値で入力して下さい")
-        end
+      it 'incident_handover_materialの値が0~100出ないと登録できない' do
+        @a_task.incident_handover_material = 101
+        @a_task.valid?
+        expect(@a_task.errors.full_messages).to include('Incident handover material 0~100の値で入力して下さい')
+      end
 
-          it 'operation_handover_materialの値が0~100出ないと登録できない' do
-            @a_task.operation_handover_material = 101
-            @a_task.valid?
-            expect(@a_task.errors.full_messages).to include("Operation handover material 0~100の値で入力して下さい")
-          end
+      it 'operation_handover_materialの値が0~100出ないと登録できない' do
+        @a_task.operation_handover_material = 101
+        @a_task.valid?
+        expect(@a_task.errors.full_messages).to include('Operation handover material 0~100の値で入力して下さい')
+      end
 
-      
       it 'a_certification_idが空では登録できない' do
         @a_task.a_certification_id = ''
         @a_task.valid?
@@ -50,7 +49,6 @@ RSpec.describe ATask, type: :model do
         another_user.valid?
         expect(another_user.errors.full_messages).to include('User has already been taken')
       end
-
     end
-end
+  end
 end
