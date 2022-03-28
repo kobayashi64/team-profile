@@ -3,9 +3,8 @@ class BTasksController < ApplicationController
   before_action :set_b_task, only: [:show, :edit, :update]
 
   def index
-    @user = User.all
-    @b_task = BTask.all
-    @b_tasks = BTask.where(user_id: current_user.id).includes(:user).order('created_at DESC') if user_signed_in?
+    @b_task = BTask.includes(:user)
+    @b_tasks = BTask.where(user_id: current_user.id).includes(:user) if user_signed_in?
   end
 
   def show

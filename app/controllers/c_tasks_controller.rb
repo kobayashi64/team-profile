@@ -3,9 +3,8 @@ class CTasksController < ApplicationController
   before_action :set_c_task, only: [:show, :edit, :update]
 
   def index
-    @user = User.all
-    @c_task = CTask.all
-    @c_tasks = CTask.where(user_id: current_user.id).includes(:user).order('created_at DESC') if user_signed_in?
+    @c_task = CTask.includes(:user)
+    @c_tasks = CTask.where(user_id: current_user.id).includes(:user) if user_signed_in?
   end
 
   def show
