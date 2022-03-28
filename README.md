@@ -71,7 +71,7 @@ https://docs.google.com/spreadsheets/d/1nTE_Q00RevLgAn0hWdvWflfHLKGgShLRKQEyM-1J
 - 採点機能つきのテスト問題作成(現状自己評価のみの評価基準のため、テストに合格したら認定が取得できるという仕組みを考えています。)
 
 ## データベース設計
-[![Image from Gyazo](https://i.gyazo.com/bba6892a8157815d97eba7926651b315.png)](https://gyazo.com/bba6892a8157815d97eba7926651b315)
+[![Image from Gyazo](https://i.gyazo.com/d0e4b7be113eac4960e9476703ff21bd.png)](https://gyazo.com/d0e4b7be113eac4960e9476703ff21bd)
 
 
 ## 開発環境
