@@ -4,7 +4,7 @@ class BTasksController < ApplicationController
 
   def index
     @b_task = BTask.includes(:user)
-    @b_tasks = BTask.where(user_id: current_user.id).includes(:user) if user_signed_in?
+    @b_tasks = BTask.where(user_id: current_user.id) if user_signed_in?
   end
 
   def show

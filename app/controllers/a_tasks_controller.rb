@@ -4,7 +4,7 @@ class ATasksController < ApplicationController
 
   def index
     @a_task = ATask.includes(:user)
-    @a_tasks = ATask.where(user_id: current_user.id).includes(:user) if user_signed_in?
+    @a_tasks = ATask.where(user_id: current_user.id) if user_signed_in?
   end
 
   def show
