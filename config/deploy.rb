@@ -31,3 +31,7 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
+
+set :nvm_type, :user
+set :nvm_node, "v14.19.0"
+set :nvm_map_bins, %w{npm node yarn rake}
