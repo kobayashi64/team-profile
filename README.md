@@ -11,6 +11,7 @@
 
 ## URL
 https://team-profile-37467.herokuapp.com/
+http://18.180.231.138/
 
 
 ## テスト用アカウント
