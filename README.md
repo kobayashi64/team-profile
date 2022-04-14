@@ -10,8 +10,8 @@
 
 
 ## URL
-https://team-profile-37467.herokuapp.com/
-http://18.180.231.138/
+https://team-profile-37467.herokuapp.com/  
+http://18.180.231.138/ (AWS)
 
 
 ## テスト用アカウント
